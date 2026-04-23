@@ -1,0 +1,125 @@
+{
+  "note": "Live SEC EDGAR fetch. OR/yield/tonnage need per-filer XBRL mapping.",
+  "carriers": [
+    {
+      "name": "ODFL",
+      "cik": "0000878927",
+      "recent_filings": [
+        {
+          "form": "10-K",
+          "date": "2026-02-24",
+          "accession": "0001193125-26-067161",
+          "url": "https://www.sec.gov/Archives/edgar/data/878927/000119312526067161/odfl-20251231.htm"
+        },
+        {
+          "form": "10-Q",
+          "date": "2025-11-06",
+          "accession": "0001193125-25-268415",
+          "url": "https://www.sec.gov/Archives/edgar/data/878927/000119312525268415/odfl-20250930.htm"
+        },
+        {
+          "form": "10-Q",
+          "date": "2025-08-06",
+          "accession": "0000950170-25-103916",
+          "url": "https://www.sec.gov/Archives/edgar/data/878927/000095017025103916/odfl-20250630.htm"
+        },
+        {
+          "form": "10-Q",
+          "date": "2025-05-06",
+          "accession": "0000950170-25-064508",
+          "url": "https://www.sec.gov/Archives/edgar/data/878927/000095017025064508/odfl-20250331.htm"
+        }
+      ]
+    },
+    {
+      "name": "Saia",
+      "cik": "0001177702",
+      "recent_filings": [
+        {
+          "form": "10-K",
+          "date": "2026-02-24",
+          "accession": "0001193125-26-067030",
+          "url": "https://www.sec.gov/Archives/edgar/data/1177702/000119312526067030/saia-20251231.htm"
+        },
+        {
+          "form": "10-Q",
+          "date": "2025-10-30",
+          "accession": "0001193125-25-258666",
+          "url": "https://www.sec.gov/Archives/edgar/data/1177702/000119312525258666/saia-20250930.htm"
+        },
+        {
+          "form": "10-Q",
+          "date": "2025-07-25",
+          "accession": "0000950170-25-098789",
+          "url": "https://www.sec.gov/Archives/edgar/data/1177702/000095017025098789/saia-20250630.htm"
+        },
+        {
+          "form": "10-Q",
+          "date": "2025-04-28",
+          "accession": "0000950170-25-059315",
+          "url": "https://www.sec.gov/Archives/edgar/data/1177702/000095017025059315/saia-20250331.htm"
+        }
+      ]
+    },
+    {
+      "name": "XPO",
+      "cik": "0001166003",
+      "recent_filings": [
+        {
+          "form": "10-K",
+          "date": "2026-02-05",
+          "accession": "0001166003-26-000016",
+          "url": "https://www.sec.gov/Archives/edgar/data/1166003/000116600326000016/xpo-20251231.htm"
+        },
+        {
+          "form": "10-Q",
+          "date": "2025-10-30",
+          "accession": "0001166003-25-000087",
+          "url": "https://www.sec.gov/Archives/edgar/data/1166003/000116600325000087/xpo-20250930.htm"
+        },
+        {
+          "form": "10-Q",
+          "date": "2025-07-31",
+          "accession": "0001166003-25-000076",
+          "url": "https://www.sec.gov/Archives/edgar/data/1166003/000116600325000076/xpo-20250630.htm"
+        },
+        {
+          "form": "10-Q",
+          "date": "2025-04-30",
+          "accession": "0001166003-25-000067",
+          "url": "https://www.sec.gov/Archives/edgar/data/1166003/000116600325000067/xpo-20250331.htm"
+        }
+      ]
+    },
+    {
+      "name": "ArcBest",
+      "cik": "0000894405",
+      "recent_filings": [
+        {
+          "form": "10-K",
+          "date": "2026-02-25",
+          "accession": "0001104659-26-019699",
+          "url": "https://www.sec.gov/Archives/edgar/data/894405/000110465926019699/arcb-20251231x10k.htm"
+        },
+        {
+          "form": "10-Q",
+          "date": "2025-11-05",
+          "accession": "0001104659-25-106816",
+          "url": "https://www.sec.gov/Archives/edgar/data/894405/000110465925106816/arcb-20250930x10q.htm"
+        },
+        {
+          "form": "10-Q",
+          "date": "2025-08-01",
+          "accession": "0001558370-25-009957",
+          "url": "https://www.sec.gov/Archives/edgar/data/894405/000155837025009957/arcb-20250630x10q.htm"
+        },
+        {
+          "form": "10-Q",
+          "date": "2025-05-02",
+          "accession": "0001558370-25-006163",
+          "url": "https://www.sec.gov/Archives/edgar/data/894405/000155837025006163/arcb-20250331x10q.htm"
+        }
+      ]
+    }
+  ]
+}
