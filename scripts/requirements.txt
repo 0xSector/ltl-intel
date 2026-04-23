@@ -1,0 +1,1 @@
+# Stdlib-only today. Placeholder for future fetchers (pandas, beautifulsoup4, requests).

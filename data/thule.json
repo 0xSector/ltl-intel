@@ -1,0 +1,44 @@
+{
+  "note": "Public-data intelligence brief for Thule Group. No internal or proprietary sources.",
+  "facilities": [
+    { "name": "Thule HQ (Malmö, SE)",          "type": "HQ",            "lat": 55.6050, "lon": 13.0038 },
+    { "name": "Hillerstorp plant (SE)",        "type": "Manufacturing", "lat": 57.2760, "lon": 13.8940 },
+    { "name": "Huta logistics (PL)",           "type": "Distribution",  "lat": 50.6360, "lon": 16.7700 },
+    { "name": "Seymour, CT (fab + assembly)",  "type": "Manufacturing", "lat": 41.3965, "lon": -73.0770 },
+    { "name": "Shelton, CT (expanded DC)",     "type": "Distribution",  "lat": 41.3164, "lon": -73.0931 },
+    { "name": "Huntersville, NC (DC)",         "type": "Distribution",  "lat": 35.4107, "lon": -80.8428 }
+  ],
+  "imports": {
+    "note": "Inferred from public BOL data + Thule supply chain reporting. Primary ocean lanes into US.",
+    "lanes": [
+      { "from": "Gdańsk, PL",    "to": "Port of New York/Newark", "containers_est": 780, "commodities": "Cargo boxes, racks, bike carriers" },
+      { "from": "Antwerp, BE",   "to": "Port of New York/Newark", "containers_est": 310, "commodities": "Locks, hardware, subassemblies" },
+      { "from": "Gothenburg, SE","to": "Port of New York/Newark", "containers_est": 95,  "commodities": "Premium racks, ski carriers" },
+      { "from": "Shanghai, CN",  "to": "Port of Los Angeles",     "containers_est": 520, "commodities": "Strollers, child carriers, bags" }
+    ]
+  },
+  "seasonality": {
+    "note": "Estimated outbound shipping seasonality. Indicative only.",
+    "months": ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+    "series": {
+      "Roof racks & cargo boxes":      [70, 85, 110, 140, 160, 155, 130, 105, 85, 75, 65, 55],
+      "Bike carriers":                 [50, 65,  95, 130, 150, 145, 120, 100, 80, 65, 50, 40],
+      "Ski/snowboard carriers":        [95,100, 80,  55,  40,  35,  40,  50, 70, 90,110,130],
+      "Active with kids (strollers)":  [80, 85,  95, 110, 120, 115, 105,  95, 90, 85, 80, 75]
+    }
+  },
+  "retail_partners": [
+    { "name": "REI",              "dc_hint": "Sumner WA, Bedford PA, Goodyear AZ" },
+    { "name": "Dick's Sporting Goods", "dc_hint": "Smithton PA, Atlanta GA, Plainfield IN" },
+    { "name": "Amazon",           "dc_hint": "Nationwide FC network" },
+    { "name": "Backcountry",      "dc_hint": "Christiansburg VA" },
+    { "name": "Public Lands",     "dc_hint": "Pittsburgh PA region" }
+  ],
+  "talking_points": [
+    "Inbound container volume from Gdańsk has grown alongside Huta automation — expect heavier, more consistent Northeast inbound flow.",
+    "Ski/snowboard SKUs and roof rack SKUs peak in opposite halves of the year — a contracted network needs elasticity both directions.",
+    "Seymour CT + Shelton CT cluster implies dense short-haul outbound into the NYC / Boston / Philly corridor: LTL is a natural fit for dealer replenishment.",
+    "Amazon and REI DC proximity suggests meaningful outbound to PA / WA / AZ — worth benchmarking vs. current linehaul network.",
+    "Peak-season accessorials (residential, liftgate for DTC, limited-access at small specialty retailers) deserve a separate accessorial schedule, not a flat rate."
+  ]
+}

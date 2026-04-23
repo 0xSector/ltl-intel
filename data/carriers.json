@@ -1,0 +1,122 @@
+{
+  "note": "Scorecard data for major North American LTL carriers. Financials from public filings; safety from FMCSA SAFER.",
+  "carriers": [
+    {
+      "name": "Old Dominion (ODFL)",
+      "ticker": "ODFL",
+      "hq": "Thomasville, NC",
+      "revenue_b": 5.9,
+      "or_pct": 73.6,
+      "yield_usd": 33.20,
+      "terminals": 260,
+      "fleet": 11200,
+      "fmcsa_unsafe_driving": 32,
+      "strengths": ["Industry-leading OR", "98%+ on-time", "Low employee turnover"],
+      "notes": "Premium pricing, premium service. Gold standard."
+    },
+    {
+      "name": "Saia",
+      "ticker": "SAIA",
+      "hq": "Johns Creek, GA",
+      "revenue_b": 3.4,
+      "or_pct": 85.4,
+      "yield_usd": 24.35,
+      "terminals": 214,
+      "fleet": 6100,
+      "fmcsa_unsafe_driving": 41,
+      "strengths": ["Fastest network expansion", "Post-Yellow terminal capture", "Yield growth"],
+      "notes": "Aggressive growth carrier. Absorbed 28 Yellow terminals in 2023."
+    },
+    {
+      "name": "XPO",
+      "ticker": "XPO",
+      "hq": "Greenwich, CT",
+      "revenue_b": 4.9,
+      "or_pct": 85.8,
+      "yield_usd": 23.05,
+      "terminals": 295,
+      "fleet": 11800,
+      "fmcsa_unsafe_driving": 47,
+      "strengths": ["Scale", "Tech investment", "LTL pure-play post-RXO spin"],
+      "notes": "Largest LTL-only player by headcount. Big transformation story."
+    },
+    {
+      "name": "Estes",
+      "ticker": "private",
+      "hq": "Richmond, VA",
+      "revenue_b": 4.3,
+      "or_pct": null,
+      "yield_usd": null,
+      "terminals": 272,
+      "fleet": 9500,
+      "fmcsa_unsafe_driving": 38,
+      "strengths": ["Largest private LTL", "Family-owned stability", "Broad coverage"],
+      "notes": "Private — financials inferred from industry press."
+    },
+    {
+      "name": "ArcBest / ABF",
+      "ticker": "ARCB",
+      "hq": "Fort Smith, AR",
+      "revenue_b": 4.2,
+      "or_pct": 93.5,
+      "yield_usd": 25.65,
+      "terminals": 241,
+      "fleet": 4900,
+      "fmcsa_unsafe_driving": 44,
+      "strengths": ["Teamster union workforce", "Asset-light logistics arm", "Heavyweight specialist"],
+      "notes": "Unionized cost base drives higher OR vs non-union peers."
+    },
+    {
+      "name": "TForce Freight (TFI)",
+      "ticker": "TFII",
+      "hq": "Montreal, QC",
+      "revenue_b": 3.2,
+      "or_pct": 96.4,
+      "yield_usd": 27.10,
+      "terminals": 181,
+      "fleet": 6200,
+      "fmcsa_unsafe_driving": 52,
+      "strengths": ["Ex-UPS Freight network", "Turnaround story", "Shedding unprofitable freight"],
+      "notes": "Acquired from UPS 2021. Still working through margin turnaround."
+    },
+    {
+      "name": "R+L Carriers",
+      "ticker": "private",
+      "hq": "Wilmington, OH",
+      "revenue_b": 2.6,
+      "or_pct": null,
+      "yield_usd": null,
+      "terminals": 130,
+      "fleet": 5100,
+      "fmcsa_unsafe_driving": 36,
+      "strengths": ["Single-line coverage to 100% US", "Guaranteed service options"],
+      "notes": "Private, family-owned, strong brand in SE/SW."
+    },
+    {
+      "name": "Southeastern Freight Lines",
+      "ticker": "private",
+      "hq": "Lexington, SC",
+      "revenue_b": 1.6,
+      "or_pct": null,
+      "yield_usd": null,
+      "terminals": 89,
+      "fleet": 3200,
+      "fmcsa_unsafe_driving": 29,
+      "strengths": ["Regional SE leader", "Top service scores", "Low turnover"],
+      "notes": "Regional specialist with consistently high Mastio service rankings."
+    },
+    {
+      "name": "Schneider National (asset + brokerage)",
+      "ticker": "SNDR",
+      "hq": "Green Bay, WI",
+      "revenue_b": 5.4,
+      "or_pct": 95.2,
+      "yield_usd": null,
+      "terminals": 0,
+      "fleet": 10100,
+      "fmcsa_unsafe_driving": 33,
+      "strengths": ["TL + intermodal + logistics", "Dedicated scale", "Cowan Systems 2025 acquisition"],
+      "notes": "Not a traditional hub-and-spoke LTL carrier. LTL exposure is via brokerage and volume/partial TL."
+    }
+  ]
+}

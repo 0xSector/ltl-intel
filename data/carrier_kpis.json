@@ -1,0 +1,42 @@
+{
+  "note": "Seed figures approximating last-reported quarterly KPIs from LTL public filings. Replace with SEC fetcher output.",
+  "unit": { "revenue": "USD millions", "or": "percent", "yield": "revenue per hundredweight USD", "tonnage": "thousands tons/day" },
+  "carriers": [
+    {
+      "name": "ODFL",
+      "history": [
+        { "period": "2025Q2", "revenue": 1505, "or": 72.9, "yield": 32.10, "tonnage": 40.1 },
+        { "period": "2025Q3", "revenue": 1490, "or": 73.4, "yield": 32.45, "tonnage": 39.5 },
+        { "period": "2025Q4", "revenue": 1440, "or": 74.1, "yield": 32.88, "tonnage": 38.2 },
+        { "period": "2026Q1", "revenue": 1465, "or": 73.6, "yield": 33.20, "tonnage": 38.8 }
+      ]
+    },
+    {
+      "name": "Saia",
+      "history": [
+        { "period": "2025Q2", "revenue": 845,  "or": 85.2, "yield": 23.40, "tonnage": 30.1 },
+        { "period": "2025Q3", "revenue": 862,  "or": 84.7, "yield": 23.75, "tonnage": 30.8 },
+        { "period": "2025Q4", "revenue": 840,  "or": 86.1, "yield": 24.02, "tonnage": 29.5 },
+        { "period": "2026Q1", "revenue": 855,  "or": 85.4, "yield": 24.35, "tonnage": 29.9 }
+      ]
+    },
+    {
+      "name": "XPO",
+      "history": [
+        { "period": "2025Q2", "revenue": 1220, "or": 85.9, "yield": 22.15, "tonnage": 44.2 },
+        { "period": "2025Q3", "revenue": 1245, "or": 85.3, "yield": 22.50, "tonnage": 45.1 },
+        { "period": "2025Q4", "revenue": 1210, "or": 86.4, "yield": 22.78, "tonnage": 43.5 },
+        { "period": "2026Q1", "revenue": 1232, "or": 85.8, "yield": 23.05, "tonnage": 44.0 }
+      ]
+    },
+    {
+      "name": "ArcBest",
+      "history": [
+        { "period": "2025Q2", "revenue": 1080, "or": 93.1, "yield": 24.80, "tonnage": 19.2 },
+        { "period": "2025Q3", "revenue": 1095, "or": 92.6, "yield": 25.10, "tonnage": 19.5 },
+        { "period": "2025Q4", "revenue": 1060, "or": 94.2, "yield": 25.40, "tonnage": 18.8 },
+        { "period": "2026Q1", "revenue": 1075, "or": 93.5, "yield": 25.65, "tonnage": 19.0 }
+      ]
+    }
+  ]
+}

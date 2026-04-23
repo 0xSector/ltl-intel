@@ -1,0 +1,13 @@
+{
+  "note": "Illustrative LTL fuel surcharge curves (% applied to linehaul). Seed values modeled on published carrier tables; replace with scraped actuals in production.",
+  "carriers": {
+    "ODFL":      { "base": 1.15, "step_per_cent": 0.40, "current_pct": 44.9 },
+    "Saia":      { "base": 1.15, "step_per_cent": 0.40, "current_pct": 45.1 },
+    "XPO":       { "base": 1.15, "step_per_cent": 0.40, "current_pct": 44.5 },
+    "Estes":     { "base": 1.15, "step_per_cent": 0.40, "current_pct": 44.7 },
+    "ArcBest":   { "base": 1.15, "step_per_cent": 0.40, "current_pct": 44.3 },
+    "Schneider": { "base": 1.15, "step_per_cent": 0.40, "current_pct": 44.6 },
+    "TFI":       { "base": 1.15, "step_per_cent": 0.40, "current_pct": 44.2 },
+    "R+L":       { "base": 1.15, "step_per_cent": 0.40, "current_pct": 44.0 }
+  }
+}

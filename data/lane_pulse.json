@@ -1,0 +1,16 @@
+{
+  "note": "Representative LTL lanes at standard weight/class. Seed data is indicative, not actual quotes.",
+  "assumed": { "weight_lb": 1000, "class": 70 },
+  "lanes": [
+    { "origin": "Los Angeles, CA",  "dest": "Chicago, IL",     "miles": 2015, "prior_wk": 612, "this_wk": 618, "change_pct": 1.0 },
+    { "origin": "Atlanta, GA",      "dest": "New York, NY",    "miles":  880, "prior_wk": 421, "this_wk": 418, "change_pct": -0.7 },
+    { "origin": "Dallas, TX",       "dest": "Miami, FL",       "miles": 1310, "prior_wk": 498, "this_wk": 505, "change_pct": 1.4 },
+    { "origin": "Seattle, WA",      "dest": "Denver, CO",      "miles": 1330, "prior_wk": 512, "this_wk": 510, "change_pct": -0.4 },
+    { "origin": "Chicago, IL",      "dest": "Boston, MA",      "miles":  985, "prior_wk": 445, "this_wk": 449, "change_pct": 0.9 },
+    { "origin": "Phoenix, AZ",      "dest": "Houston, TX",     "miles": 1180, "prior_wk": 472, "this_wk": 475, "change_pct": 0.6 },
+    { "origin": "Newark, NJ",       "dest": "Charlotte, NC",   "miles":  630, "prior_wk": 352, "this_wk": 350, "change_pct": -0.6 },
+    { "origin": "Minneapolis, MN",  "dest": "Kansas City, MO", "miles":  440, "prior_wk": 298, "this_wk": 302, "change_pct": 1.3 },
+    { "origin": "Memphis, TN",      "dest": "Pittsburgh, PA",  "miles":  785, "prior_wk": 398, "this_wk": 395, "change_pct": -0.8 },
+    { "origin": "Portland, OR",     "dest": "Salt Lake City, UT","miles":765, "prior_wk": 378, "this_wk": 384, "change_pct": 1.6 }
+  ]
+}
