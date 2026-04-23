@@ -9,8 +9,14 @@ window.TabThule = {
         <p class="text-sm text-slate-700 leading-relaxed">
           Outdoor products manufacturer (roof racks, cargo boxes, bike/ski carriers, child carriers, luggage).
           HQ Malmö, SE · listed on Nasdaq Stockholm · US ops anchored in Seymour & Shelton, CT.
-          This brief synthesizes public facility data, inferred import lanes, and seasonality to support pricing & renewal conversations.
         </p>
+        <div class="mt-3 p-3 bg-amber-50 border border-amber-200 rounded text-xs text-amber-900 leading-relaxed">
+          <b>Provenance legend for this tab.</b> Each section below is tagged with one of three chips:
+          <span class="chip bg-emerald-100 text-emerald-700 ml-1">real</span> = verified from public sources (company filings, facility addresses, annual reports).
+          <span class="chip bg-amber-100 text-amber-800 ml-1">inferred</span> = directionally reasonable estimate based on public clues (no proprietary data).
+          <span class="chip bg-rose-100 text-rose-800 ml-1">illustrative</span> = shape is educated guess, numbers are placeholder — replace with real data before quoting.
+          Nothing on this tab is Thule proprietary data. For a real brief, pair this framework with ImportGenius/Panjiva imports and actual account history.
+        </div>
       </div>
 
       <div class="mb-6 card border-l-4 border-indigo-500">
@@ -26,29 +32,30 @@ window.TabThule = {
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
         <div class="card">
-          <h3>Global footprint</h3>
+          <h3>Global footprint <span class="chip bg-emerald-100 text-emerald-700">real</span></h3>
           <div id="thule-map" style="height: 360px"></div>
+          <p class="text-xs text-slate-500 mt-2">Facility locations verified from Thule's public facility list and annual report.</p>
         </div>
         <div class="card">
-          <h3>Outbound seasonality (indicative index)</h3>
+          <h3>Outbound seasonality <span class="chip bg-rose-100 text-rose-800">illustrative</span></h3>
           <canvas id="thule-seasonality" height="200"></canvas>
-          <p class="text-xs text-slate-500 mt-2">${d.seasonality.note}</p>
+          <p class="text-xs text-slate-500 mt-2">Seasonality <em>shape</em> reflects product category reality; numeric values are placeholder. Replace with real shipment counts before pricing peak-season surcharges.</p>
         </div>
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
         <div class="card">
-          <h3>Inferred inbound ocean lanes</h3>
+          <h3>Inbound ocean lanes <span class="chip bg-amber-100 text-amber-800">inferred</span></h3>
           <table class="data">
             <thead><tr><th>From</th><th>To</th><th class="text-right">Est. containers</th><th>Commodities</th></tr></thead>
             <tbody>${d.imports.lanes.map(l => `
               <tr><td>${l.from}</td><td>${l.to}</td><td class="text-right font-medium">${l.containers_est.toLocaleString()}</td><td class="text-slate-500">${l.commodities}</td></tr>
             `).join('')}</tbody>
           </table>
-          <p class="text-xs text-slate-500 mt-2">${d.imports.note}</p>
+          <p class="text-xs text-slate-500 mt-2">Ports and origin facilities are real; container counts are order-of-magnitude estimates. Actual volumes require ImportGenius/Panjiva subscription data.</p>
         </div>
         <div class="card">
-          <h3>Likely retail DC destinations</h3>
+          <h3>Retail DC destinations <span class="chip bg-amber-100 text-amber-800">inferred</span></h3>
           <ul class="space-y-2 text-sm">
             ${d.retail_partners.map(r => `
               <li class="flex justify-between border-b border-slate-100 pb-1.5">

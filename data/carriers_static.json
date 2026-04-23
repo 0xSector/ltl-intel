@@ -1,0 +1,32 @@
+{
+  "note": "Static carrier facts — HQ, ticker, editorial notes. Financials and safety come from separate live feeds (carrier_kpis.json from SEC, fmcsa.json from SAFER).",
+  "carriers": [
+    { "name": "ODFL",         "full_name": "Old Dominion Freight Line",   "ticker": "ODFL",     "hq": "Thomasville, NC", "type": "LTL pure-play",
+      "strengths": ["Industry-leading OR", "98%+ on-time", "Low driver turnover"],
+      "notes": "Premium pricing, premium service. Gold standard of LTL margin." },
+    { "name": "Saia",         "full_name": "Saia Inc",                   "ticker": "SAIA",     "hq": "Johns Creek, GA", "type": "LTL pure-play",
+      "strengths": ["Fastest network expansion", "Post-Yellow terminal capture", "Yield growth"],
+      "notes": "Aggressive growth carrier. Absorbed 28 Yellow terminals in 2023." },
+    { "name": "XPO",          "full_name": "XPO Logistics Freight (XPO Inc)", "ticker": "XPO",  "hq": "Greenwich, CT",   "type": "LTL pure-play",
+      "strengths": ["Scale", "Tech investment", "Post-RXO LTL pure-play"],
+      "notes": "Largest LTL-only player by revenue. Turnaround margin story." },
+    { "name": "Estes",        "full_name": "Estes Express Lines",        "ticker": "private",  "hq": "Richmond, VA",    "type": "LTL pure-play",
+      "strengths": ["Largest private LTL", "Family-owned stability", "Broad coverage"],
+      "notes": "Private — SEC financials unavailable; safety data is real." },
+    { "name": "ArcBest",      "full_name": "ArcBest / ABF Freight",      "ticker": "ARCB",     "hq": "Fort Smith, AR",  "type": "LTL pure-play (union)",
+      "strengths": ["Teamster union workforce", "Asset-light logistics arm", "Heavyweight specialist"],
+      "notes": "Unionized cost base drives structurally higher OR vs non-union peers." },
+    { "name": "TFI",          "full_name": "TForce Freight (TFI Intl)",  "ticker": "TFII",     "hq": "Montreal, QC",    "type": "LTL (ex-UPS Freight)",
+      "strengths": ["Ex-UPS Freight network", "Turnaround story", "Shedding unprofitable freight"],
+      "notes": "Acquired from UPS 2021. Margin turnaround in progress." },
+    { "name": "R+L",          "full_name": "R+L Carriers (Greenwood Motor Lines)", "ticker": "private", "hq": "Wilmington, OH", "type": "LTL pure-play",
+      "strengths": ["Single-line coverage to 100% US", "Guaranteed service options"],
+      "notes": "Private, family-owned. SAFER legal entity is Greenwood Motor Lines." },
+    { "name": "Southeastern", "full_name": "Southeastern Freight Lines", "ticker": "private",  "hq": "Lexington, SC",   "type": "Regional LTL",
+      "strengths": ["SE regional leader", "Top service scores", "Low driver turnover"],
+      "notes": "Regional specialist with consistently high Mastio service rankings." },
+    { "name": "Schneider",    "full_name": "Schneider National Carriers","ticker": "SNDR",     "hq": "Green Bay, WI",   "type": "TL + intermodal + logistics",
+      "strengths": ["TL + intermodal + logistics", "Dedicated scale", "Cowan Systems 2025 acquisition"],
+      "notes": "Not a hub-and-spoke LTL carrier. LTL exposure via brokerage and volume/partial TL." }
+  ]
+}

@@ -26,8 +26,20 @@ jobs:
           EIA_API_KEY: ${{ secrets.EIA_API_KEY }}
         run: python scripts/fetch_diesel.py || echo "diesel fetch skipped"
 
-      - name: Fetch SEC filings index
+      - name: Fetch SEC quarterly KPIs
         run: python scripts/fetch_sec.py || echo "sec fetch skipped"
+
+      - name: Fetch SEC 8-K yields
+        run: python scripts/fetch_yields.py || echo "yields fetch skipped"
+
+      - name: Fetch FMCSA SAFER
+        run: python scripts/fetch_fmcsa.py || echo "fmcsa fetch skipped"
+
+      - name: Fetch market indicators (CASS/LMI/ATA)
+        run: python scripts/fetch_market_indicators.py || echo "market fetch skipped"
+
+      - name: Build FSC tables
+        run: python scripts/build_fsc_tables.py
 
       - name: Stamp last_updated
         run: python scripts/fetch_last_updated.py

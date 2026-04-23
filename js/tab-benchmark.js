@@ -53,9 +53,9 @@ window.TabBenchmark = {
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
         <div class="card">
-          <h3>Quarterly revenue ($M)</h3>
-          <canvas id="bm-rev-chart" height="160"></canvas>
-          <p class="text-xs text-slate-500 mt-2">Source: SEC XBRL · standalone quarters (duration-filtered).</p>
+          <h3>LTL revenue per cwt (yield)</h3>
+          <canvas id="bm-yield-chart" height="160"></canvas>
+          <p class="text-xs text-slate-500 mt-2">Source: SEC 8-K earnings releases · parsed from operating statistics tables.</p>
         </div>
         <div class="card">
           <h3>Operating ratio (derived from SEC XBRL)</h3>
@@ -64,21 +64,22 @@ window.TabBenchmark = {
         </div>
       </div>
 
-      <div class="card">
-        <h3>Lane rate pulse · 1000 lb · class 70 (indicative)</h3>
-        <table class="data">
-          <thead><tr><th>Origin</th><th>Destination</th><th>Miles</th><th class="text-right">This week</th><th class="text-right">Prior week</th><th class="text-right">Δ</th></tr></thead>
-          <tbody id="bm-lanes"></tbody>
-        </table>
+      <div class="grid grid-cols-1 gap-6 mb-6">
+        <div class="card">
+          <h3>Quarterly revenue ($M)</h3>
+          <canvas id="bm-rev-chart" height="120"></canvas>
+          <p class="text-xs text-slate-500 mt-2">Source: SEC XBRL · standalone quarters (duration-filtered).</p>
+        </div>
       </div>
+
     `;
 
-    const [diesel, fsc, kpis, cass, lanes] = await Promise.all([
+    const [diesel, fsc, kpis, cass, yields] = await Promise.all([
       fetch('data/diesel.json').then(r => r.json()),
       fetch('data/fsc_tables.json').then(r => r.json()),
       fetch('data/carrier_kpis.json').then(r => r.json()),
       fetch('data/cass_lmi.json').then(r => r.json()),
-      fetch('data/lane_pulse.json').then(r => r.json()),
+      fetch('data/yields.json').then(r => r.json()).catch(() => ({ carriers: [] })),
     ]);
 
     const dlast = diesel.series.at(-1), dprior = diesel.series.at(-2);
@@ -155,19 +156,22 @@ window.TabBenchmark = {
     document.getElementById('bm-base').addEventListener('input', renderAllIn);
     renderAllIn();
 
-    const ind = cass.indicators;
+    const ind = cass.indicators || {};
     document.getElementById('bm-indicators').innerHTML = Object.entries(ind).map(([k, v]) => {
-      const delta = v.latest - v.prior;
-      const cls = delta >= 0 ? 'delta-up' : 'delta-down';
+      const mom = v.mom_pct != null ? `<span class="${v.mom_pct >= 0 ? 'delta-up' : 'delta-down'} ml-2 text-xs">${v.mom_pct >= 0 ? '+' : ''}${v.mom_pct}% m/m</span>` : '';
+      const yoy = v.yoy_pct != null ? `<span class="text-slate-400 ml-2 text-xs">${v.yoy_pct >= 0 ? '+' : ''}${v.yoy_pct}% YoY</span>` : '';
       return `
         <div class="flex items-baseline justify-between">
           <div class="text-sm text-slate-600">${k.replace(/_/g, ' ')}</div>
-          <div class="text-sm"><span class="font-semibold">${v.latest.toFixed(1)}</span>
-            <span class="${cls} ml-2 text-xs">${delta >= 0 ? '+' : ''}${delta.toFixed(1)} m/m</span>
-            <span class="text-slate-400 ml-2 text-xs">${v.yoy_pct >= 0 ? '+' : ''}${v.yoy_pct}% YoY</span>
-          </div>
+          <div class="text-sm"><span class="font-semibold">${v.latest.toFixed(v.latest < 10 ? 3 : 1)}</span>${mom}${yoy}</div>
         </div>`;
     }).join('');
+    // Add source attribution
+    const sources = [];
+    if (cass.cass?.source_url) sources.push(`<a class="underline" href="${cass.cass.source_url}" target="_blank">CASS ${cass.cass.period_slug || ''}</a>`);
+    if (cass.lmi?.source_url)  sources.push(`<a class="underline" href="${cass.lmi.source_url}" target="_blank">LMI ${cass.lmi.period_slug || ''}</a>`);
+    if (cass.ata?.source_url)  sources.push(`<a class="underline" href="${cass.ata.source_url}" target="_blank">ATA</a>`);
+    if (sources.length) document.getElementById('bm-indicators').insertAdjacentHTML('beforeend', `<div class="text-xs text-slate-400 pt-2 border-t border-slate-100 mt-2">Sources: ${sources.join(' · ')}</div>`);
 
     const kpiPalette = ['#4f46e5', '#0ea5e9', '#10b981', '#f59e0b'];
     const carriersWithData = (kpis.carriers || []).filter(c => (c.history || []).length);
@@ -189,6 +193,24 @@ window.TabBenchmark = {
       },
       options: { plugins: { legend: { position: 'bottom' } }, scales: { y: { ticks: { callback: v => '$' + v } } } },
     });
+    // Yield chart
+    const yieldCarriers = (yields.carriers || []).filter(c => (c.history || []).length);
+    const yieldPeriods = [...new Set(yieldCarriers.flatMap(c => c.history.map(h => h.period)))].sort();
+    new Chart(document.getElementById('bm-yield-chart'), {
+      type: 'line',
+      data: {
+        labels: yieldPeriods,
+        datasets: yieldCarriers.map((c, i) => ({
+          label: c.name, borderColor: kpiPalette[i % kpiPalette.length], backgroundColor: kpiPalette[i % kpiPalette.length],
+          data: yieldPeriods.map(p => {
+            const h = c.history.find(x => x.period === p);
+            return h ? h.yield_per_cwt : null;
+          }), tension: 0.25, spanGaps: true,
+        })),
+      },
+      options: { plugins: { legend: { position: 'bottom' } }, scales: { y: { ticks: { callback: v => '$' + v } } } },
+    });
+
     new Chart(document.getElementById('bm-or-chart'), {
       type: 'line',
       data: {
@@ -201,28 +223,18 @@ window.TabBenchmark = {
       options: { plugins: { legend: { position: 'bottom' } }, scales: { y: { ticks: { callback: v => v + '%' } } } },
     });
 
-    document.getElementById('bm-lanes').innerHTML = lanes.lanes.map(l => {
-      const delta = l.this_wk - l.prior_wk;
-      const cls = delta >= 0 ? 'delta-up' : 'delta-down';
-      return `<tr>
-        <td>${l.origin}</td><td>${l.dest}</td>
-        <td class="text-slate-500">${l.miles.toLocaleString()}</td>
-        <td class="text-right font-medium">$${l.this_wk}</td>
-        <td class="text-right text-slate-500">$${l.prior_wk}</td>
-        <td class="text-right ${cls}">${delta >= 0 ? '+' : ''}${delta} (${l.change_pct >= 0 ? '+' : ''}${l.change_pct}%)</td>
-      </tr>`;
-    }).join('');
-
     const fscAvg = fscEntries.reduce((s, [, p]) => s + p, 0) / fscEntries.length;
     const fscAvg13 = Object.values(fsc13wk).reduce((s, v) => s + v, 0) / Object.keys(fsc13wk).length;
-    const lmi = ind.LMI_Headline.latest;
-    const lmiTrend = lmi > 55 ? 'expansion' : lmi > 50 ? 'tepid expansion' : 'contraction';
+    const lmi = ind.LMI_Headline?.latest;
+    const lmiTrend = lmi == null ? '' : lmi > 55 ? 'expansion' : lmi > 50 ? 'tepid expansion' : 'contraction';
+    const ataMom = ind.ATA_Tonnage?.mom_pct;
     document.getElementById('bm-summary').textContent =
       `Diesel ${ddelta >= 0 ? 'up' : 'down'} $${Math.abs(ddelta).toFixed(3)} w/w to $${dlast.price.toFixed(3)}, ` +
       `$${(dlast.price - d13wk.price).toFixed(2)} over 13 weeks. ` +
       `Average LTL FSC now ${fscAvg.toFixed(1)}% (was ${fscAvg13.toFixed(1)}% 13 weeks ago — ${(fscAvg - fscAvg13 >= 0 ? '+' : '')}${(fscAvg - fscAvg13).toFixed(1)}pp). ` +
       `Every $1,000 of linehaul now carries an extra $${((fscAvg - fscAvg13) * 10).toFixed(0)} of FSC vs a quarter ago — material renewal leverage. ` +
-      `LMI ${lmi} (${lmiTrend}); ATA tonnage ${ind.ATA_Tonnage.yoy_pct >= 0 ? '+' : ''}${ind.ATA_Tonnage.yoy_pct}% YoY.`;
+      (lmi != null ? `LMI ${lmi} (${lmiTrend})` : 'LMI unavailable') +
+      (ataMom != null ? `; ATA tonnage ${ataMom >= 0 ? '+' : ''}${ataMom}% MoM.` : '.');
 
     // Key takeaways — computed from the data
     const takeaways = [];
@@ -246,10 +258,12 @@ window.TabBenchmark = {
         takeaways.push(`<b>${latestPeriod} margin read:</b> ${best.name} leads at ${best.or.toFixed(1)}% OR; ${worst.name} trails at ${worst.or.toFixed(1)}%. ${worst.or - best.or > 15 ? 'That gap is structural — union cost base + scale economics.' : 'Closer than historical norms — pricing convergence.'}`);
       }
     }
-    if (lmi < 50) {
-      takeaways.push(`<b>LMI below 50 (${lmi}) signals contraction.</b> Expect shippers to push harder on renewals and volume commitments to soften.`);
-    } else if (lmi > 57) {
-      takeaways.push(`<b>LMI ${lmi} signals firm expansion.</b> Capacity is tight — carriers hold pricing discipline. Time to push on yield, not chase share.`);
+    if (lmi != null) {
+      if (lmi < 50) {
+        takeaways.push(`<b>LMI below 50 (${lmi}) signals contraction.</b> Expect shippers to push harder on renewals and volume commitments to soften.`);
+      } else if (lmi > 57) {
+        takeaways.push(`<b>LMI ${lmi} signals firm expansion.</b> Capacity is tight — carriers hold pricing discipline. Time to push on yield, not chase share.`);
+      }
     }
     document.getElementById('bm-takeaways').innerHTML = takeaways.map(t => `<li>• ${t}</li>`).join('');
   }

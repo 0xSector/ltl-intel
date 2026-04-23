@@ -1,0 +1,349 @@
+{
+  "note": "Parsed from FMCSA SAFER public company snapshot HTML. 24-month rolling inspection/crash counts.",
+  "source_url_pattern": "https://safer.fmcsa.dot.gov/query.asp?searchtype=ANY&query_type=queryCarrierSnapshot&query_param=USDOT&query_string={DOT}",
+  "fetched_at": "2026-04-23T03:52:40.316581Z",
+  "carriers": [
+    {
+      "legal_name": "OLD DOMINION FREIGHT LINE INC",
+      "power_units": 10974,
+      "drivers": 11620,
+      "mcs150_date": "07/08/2024",
+      "inspections_24mo": {
+        "vehicle": 2871,
+        "driver": 4491,
+        "hazmat": 1421,
+        "iep": 0
+      },
+      "out_of_service_24mo": {
+        "vehicle": 250,
+        "driver": 27,
+        "hazmat": 15,
+        "iep": 0
+      },
+      "out_of_service_pct": {
+        "vehicle": 8.7,
+        "driver": 0.6,
+        "hazmat": 1.1,
+        "iep": 0.0
+      },
+      "crashes_24mo": {
+        "fatal": 22,
+        "injury": 182,
+        "tow": 375,
+        "total": 579
+      },
+      "safety_rating": {
+        "rating_date": "09/29/1995",
+        "review_date": "02/09/2023",
+        "rating": "Satisfactory",
+        "type": "Non-Ratable"
+      },
+      "name": "ODFL",
+      "dot": "90849"
+    },
+    {
+      "legal_name": "SAIA MOTOR FREIGHT LINE LLC",
+      "power_units": 6980,
+      "drivers": 7315,
+      "mcs150_date": "04/13/2026",
+      "inspections_24mo": {
+        "vehicle": 2765,
+        "driver": 3929,
+        "hazmat": 1490,
+        "iep": 0
+      },
+      "out_of_service_24mo": {
+        "vehicle": 400,
+        "driver": 28,
+        "hazmat": 30,
+        "iep": 0
+      },
+      "out_of_service_pct": {
+        "vehicle": 14.5,
+        "driver": 0.7,
+        "hazmat": 2.0,
+        "iep": 0.0
+      },
+      "crashes_24mo": {
+        "fatal": 14,
+        "injury": 109,
+        "tow": 277,
+        "total": 400
+      },
+      "safety_rating": {
+        "rating_date": "01/29/1991",
+        "review_date": "01/28/2026",
+        "rating": "Satisfactory",
+        "type": "Non-Ratable"
+      },
+      "name": "Saia",
+      "dot": "29124"
+    },
+    {
+      "legal_name": "XPO LOGISTICS FREIGHT INC",
+      "power_units": 10260,
+      "drivers": 12986,
+      "mcs150_date": "09/25/2025",
+      "inspections_24mo": {
+        "vehicle": 3261,
+        "driver": 4874,
+        "hazmat": 1448,
+        "iep": 0
+      },
+      "out_of_service_24mo": {
+        "vehicle": 435,
+        "driver": 49,
+        "hazmat": 28,
+        "iep": 0
+      },
+      "out_of_service_pct": {
+        "vehicle": 13.3,
+        "driver": 1.0,
+        "hazmat": 1.9,
+        "iep": 0.0
+      },
+      "crashes_24mo": {
+        "fatal": 12,
+        "injury": 217,
+        "tow": 407,
+        "total": 636
+      },
+      "safety_rating": {
+        "rating_date": "12/22/1994",
+        "review_date": "10/18/2023",
+        "rating": "Satisfactory",
+        "type": "Non-Ratable"
+      },
+      "name": "XPO",
+      "dot": "241829"
+    },
+    {
+      "legal_name": "ESTES EXPRESS LINES",
+      "power_units": 9805,
+      "drivers": 8821,
+      "mcs150_date": "07/29/2025",
+      "inspections_24mo": {
+        "vehicle": 2784,
+        "driver": 4636,
+        "hazmat": 1171,
+        "iep": 0
+      },
+      "out_of_service_24mo": {
+        "vehicle": 469,
+        "driver": 35,
+        "hazmat": 35,
+        "iep": 0
+      },
+      "out_of_service_pct": {
+        "vehicle": 16.8,
+        "driver": 0.8,
+        "hazmat": 3.0,
+        "iep": 0.0
+      },
+      "crashes_24mo": {
+        "fatal": 10,
+        "injury": 201,
+        "tow": 365,
+        "total": 576
+      },
+      "safety_rating": {
+        "rating_date": "01/29/2001",
+        "review_date": "05/15/2012",
+        "rating": "Satisfactory",
+        "type": "Non-Ratable"
+      },
+      "name": "Estes",
+      "dot": "121018"
+    },
+    {
+      "legal_name": "ABF FREIGHT SYSTEM INC",
+      "power_units": 4604,
+      "drivers": 6667,
+      "mcs150_date": "05/22/2024",
+      "inspections_24mo": {
+        "vehicle": 1577,
+        "driver": 2456,
+        "hazmat": 700,
+        "iep": 0
+      },
+      "out_of_service_24mo": {
+        "vehicle": 181,
+        "driver": 18,
+        "hazmat": 9,
+        "iep": 0
+      },
+      "out_of_service_pct": {
+        "vehicle": 11.5,
+        "driver": 0.7,
+        "hazmat": 1.3,
+        "iep": 0.0
+      },
+      "crashes_24mo": {
+        "fatal": 2,
+        "injury": 113,
+        "tow": 218,
+        "total": 333
+      },
+      "safety_rating": {
+        "rating_date": "11/01/1994",
+        "review_date": "02/18/2022",
+        "rating": "Satisfactory",
+        "type": "Non-Ratable"
+      },
+      "name": "ArcBest",
+      "dot": "82866"
+    },
+    {
+      "legal_name": "SCHNEIDER NATIONAL CARRIERS INC",
+      "power_units": 9866,
+      "drivers": 11335,
+      "mcs150_date": "01/30/2026",
+      "inspections_24mo": {
+        "vehicle": 8818,
+        "driver": 15552,
+        "hazmat": 510,
+        "iep": 2
+      },
+      "out_of_service_24mo": {
+        "vehicle": 1579,
+        "driver": 91,
+        "hazmat": 4,
+        "iep": 0
+      },
+      "out_of_service_pct": {
+        "vehicle": 17.9,
+        "driver": 0.6,
+        "hazmat": 0.8,
+        "iep": 0.0
+      },
+      "crashes_24mo": {
+        "fatal": 10,
+        "injury": 237,
+        "tow": 459,
+        "total": 706
+      },
+      "safety_rating": {
+        "rating_date": "02/20/2003",
+        "review_date": "04/06/2023",
+        "rating": "Satisfactory",
+        "type": "Non-Ratable"
+      },
+      "name": "Schneider",
+      "dot": "264184"
+    },
+    {
+      "legal_name": "TFORCE FREIGHT INC",
+      "power_units": 4155,
+      "drivers": 4379,
+      "mcs150_date": "08/06/2025",
+      "inspections_24mo": {
+        "vehicle": 2319,
+        "driver": 3501,
+        "hazmat": 940,
+        "iep": 0
+      },
+      "out_of_service_24mo": {
+        "vehicle": 378,
+        "driver": 35,
+        "hazmat": 25,
+        "iep": 0
+      },
+      "out_of_service_pct": {
+        "vehicle": 16.3,
+        "driver": 1.0,
+        "hazmat": 2.7,
+        "iep": 0.0
+      },
+      "crashes_24mo": {
+        "fatal": 2,
+        "injury": 64,
+        "tow": 125,
+        "total": 191
+      },
+      "safety_rating": {
+        "rating_date": "07/01/2002",
+        "review_date": "10/01/2025",
+        "rating": "Satisfactory",
+        "type": "Non-Ratable"
+      },
+      "name": "TFI",
+      "dot": "121058"
+    },
+    {
+      "legal_name": "GREENWOOD MOTOR LINES INC",
+      "power_units": 10296,
+      "drivers": 10514,
+      "mcs150_date": "08/09/2025",
+      "inspections_24mo": {
+        "vehicle": 4557,
+        "driver": 6624,
+        "hazmat": 2959,
+        "iep": 0
+      },
+      "out_of_service_24mo": {
+        "vehicle": 567,
+        "driver": 29,
+        "hazmat": 48,
+        "iep": 0
+      },
+      "out_of_service_pct": {
+        "vehicle": 12.4,
+        "driver": 0.4,
+        "hazmat": 1.6,
+        "iep": 0.0
+      },
+      "crashes_24mo": {
+        "fatal": 18,
+        "injury": 188,
+        "tow": 384,
+        "total": 590
+      },
+      "safety_rating": {
+        "rating_date": "05/02/1990",
+        "review_date": "03/04/2024",
+        "rating": "Satisfactory",
+        "type": "Non-Ratable"
+      },
+      "name": "R+L",
+      "dot": "63391"
+    },
+    {
+      "legal_name": "SOUTHEASTERN FREIGHT LINES LLC",
+      "power_units": 3177,
+      "drivers": 3895,
+      "mcs150_date": "03/30/2026",
+      "inspections_24mo": {
+        "vehicle": 1224,
+        "driver": 1946,
+        "hazmat": 628,
+        "iep": 0
+      },
+      "out_of_service_24mo": {
+        "vehicle": 123,
+        "driver": 4,
+        "hazmat": 23,
+        "iep": 0
+      },
+      "out_of_service_pct": {
+        "vehicle": 10.0,
+        "driver": 0.2,
+        "hazmat": 3.7,
+        "iep": 0.0
+      },
+      "crashes_24mo": {
+        "fatal": 6,
+        "injury": 80,
+        "tow": 118,
+        "total": 204
+      },
+      "safety_rating": {
+        "rating_date": "08/30/1995",
+        "review_date": "08/04/2004",
+        "rating": "Satisfactory",
+        "type": "Non-Ratable"
+      },
+      "name": "Southeastern",
+      "dot": "63419"
+    }
+  ]
+}
