@@ -7,6 +7,11 @@ window.TabBenchmark = {
         <p id="bm-summary" class="text-sm text-slate-700 leading-relaxed">Loading…</p>
       </div>
 
+      <div class="mb-6 card border-l-4 border-indigo-500">
+        <h3>Key takeaways</h3>
+        <ul id="bm-takeaways" class="text-sm text-slate-700 space-y-2 leading-relaxed"></ul>
+      </div>
+
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
         <div class="card">
           <h3>DOE diesel (weekly)</h3>
@@ -218,5 +223,34 @@ window.TabBenchmark = {
       `Average LTL FSC now ${fscAvg.toFixed(1)}% (was ${fscAvg13.toFixed(1)}% 13 weeks ago — ${(fscAvg - fscAvg13 >= 0 ? '+' : '')}${(fscAvg - fscAvg13).toFixed(1)}pp). ` +
       `Every $1,000 of linehaul now carries an extra $${((fscAvg - fscAvg13) * 10).toFixed(0)} of FSC vs a quarter ago — material renewal leverage. ` +
       `LMI ${lmi} (${lmiTrend}); ATA tonnage ${ind.ATA_Tonnage.yoy_pct >= 0 ? '+' : ''}${ind.ATA_Tonnage.yoy_pct}% YoY.`;
+
+    // Key takeaways — computed from the data
+    const takeaways = [];
+    const fscGap = fscAvg - fscAvg13;
+    if (Math.abs(fscGap) >= 3) {
+      takeaways.push(`<b>FSC environment ${fscGap >= 0 ? 'firming' : 'softening'}.</b> Average FSC moved ${fscGap >= 0 ? '+' : ''}${fscGap.toFixed(1)}pp in 13 weeks. Any contract with a fixed or capped FSC signed before ${d13wk.week} is now ${fscGap >= 0 ? 'below market — carrier leverage' : 'above market — shipper leverage'}.`);
+    }
+    const cheapest = fscEntries.at(-1), priciest = fscEntries[0];
+    if (priciest && cheapest) {
+      const spread = priciest[1] - cheapest[1];
+      takeaways.push(`<b>Carrier FSC spread: ${spread.toFixed(1)}pp</b> between ${priciest[0]} (${priciest[1].toFixed(1)}%) and ${cheapest[0]} (${cheapest[1].toFixed(1)}%). On $10K/mo of linehaul, that's $${(spread * 100).toFixed(0)}/mo of pure FSC savings by moving to the lowest — worth comparing against service differential.`);
+    }
+    if (carriersWithData.length) {
+      const latestPeriod = allPeriods.at(-1);
+      const latestOrs = carriersWithData.map(c => {
+        const h = c.history.find(x => x.period === latestPeriod);
+        return h ? { name: c.name, or: h.operating_ratio_pct } : null;
+      }).filter(Boolean).sort((a, b) => a.or - b.or);
+      if (latestOrs.length >= 2) {
+        const best = latestOrs[0], worst = latestOrs.at(-1);
+        takeaways.push(`<b>${latestPeriod} margin read:</b> ${best.name} leads at ${best.or.toFixed(1)}% OR; ${worst.name} trails at ${worst.or.toFixed(1)}%. ${worst.or - best.or > 15 ? 'That gap is structural — union cost base + scale economics.' : 'Closer than historical norms — pricing convergence.'}`);
+      }
+    }
+    if (lmi < 50) {
+      takeaways.push(`<b>LMI below 50 (${lmi}) signals contraction.</b> Expect shippers to push harder on renewals and volume commitments to soften.`);
+    } else if (lmi > 57) {
+      takeaways.push(`<b>LMI ${lmi} signals firm expansion.</b> Capacity is tight — carriers hold pricing discipline. Time to push on yield, not chase share.`);
+    }
+    document.getElementById('bm-takeaways').innerHTML = takeaways.map(t => `<li>• ${t}</li>`).join('');
   }
 };

@@ -34,7 +34,30 @@ window.TabScorecard = {
       </div>
     `;
 
+    // Compute key takeaways from the carrier data
+    const withOR = data.carriers.filter(c => c.or_pct != null);
+    const bestOR = withOR.slice().sort((a, b) => a.or_pct - b.or_pct)[0];
+    const worstOR = withOR.slice().sort((a, b) => b.or_pct - a.or_pct)[0];
+    const withYield = data.carriers.filter(c => c.yield_usd != null);
+    const highestYield = withYield.slice().sort((a, b) => b.yield_usd - a.yield_usd)[0];
+    const lowestYield = withYield.slice().sort((a, b) => a.yield_usd - b.yield_usd)[0];
+    const totalTerminals = data.carriers.reduce((s, c) => s + (c.terminals || 0), 0);
+    const publicCarriers = data.carriers.filter(c => c.ticker && c.ticker !== 'private').length;
+
+    const takeaways = [
+      `<b>${bestOR.name.split(' ')[0]} runs ${(worstOR.or_pct - bestOR.or_pct).toFixed(1)}pp tighter OR than ${worstOR.name.split(' ')[0]}</b> (${bestOR.or_pct.toFixed(1)}% vs ${worstOR.or_pct.toFixed(1)}%). That's the structural advantage of non-union cost base + density. On $1B of revenue, that's $${((worstOR.or_pct - bestOR.or_pct) * 10).toFixed(0)}M of operating income.`,
+      `<b>Yield spread: $${(highestYield.yield_usd - lowestYield.yield_usd).toFixed(2)}/cwt</b> between ${highestYield.name.split(' ')[0]} ($${highestYield.yield_usd.toFixed(2)}) and ${lowestYield.name.split(' ')[0]} ($${lowestYield.yield_usd.toFixed(2)}). Higher yield usually = heavyweight-specialist mix or premium service positioning; lower = volume/scale play.`,
+      `<b>${publicCarriers} of ${data.carriers.length} carriers are public</b> — ${data.carriers.length - publicCarriers} private (Estes, R+L, Southeastern) don't disclose OR or yield. Use Mastio rankings or freight press for service benchmarks there.`,
+      `<b>Schneider is not a hub-and-spoke LTL carrier.</b> Their LTL exposure comes through brokerage and volume/partial TL — comparing them head-to-head on pure-LTL OR would mislead. For Thule-style accounts, the real competitive set is ODFL/Saia/XPO/Estes.`,
+    ];
+
     root.innerHTML = `
+      <div class="mb-6 card border-l-4 border-indigo-500">
+        <h3>Key takeaways</h3>
+        <ul class="text-sm text-slate-700 space-y-2 leading-relaxed">
+          ${takeaways.map(t => `<li>• ${t}</li>`).join('')}
+        </ul>
+      </div>
       <div class="mb-4 flex items-center justify-between">
         <p class="text-sm text-slate-600">Select up to 4 carriers to compare side-by-side.</p>
         <button id="sc-reset" class="text-xs text-indigo-600 underline">Reset</button>

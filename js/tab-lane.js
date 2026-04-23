@@ -126,6 +126,11 @@ window.TabLane = {
         <h3>Rate quote by carrier</h3>
         <div id="ln-results"><p class="text-sm text-slate-500">Enter ZIPs and click "Price lane".</p></div>
       </div>
+
+      <div class="card mt-6 border-l-4 border-indigo-500 hidden" id="ln-takeaways-card">
+        <h3>Key takeaways</h3>
+        <ul id="ln-takeaways" class="text-sm text-slate-700 space-y-2 leading-relaxed"></ul>
+      </div>
     `;
 
     const [diesel, fscTables] = await Promise.all([
@@ -191,6 +196,28 @@ window.TabLane = {
             (${(((rows.at(-1).total - rows[0].total) / rows[0].total) * 100).toFixed(1)}%).
           </div>
         `;
+
+        // Takeaways
+        const cheap = rows[0], pricey = rows.at(-1);
+        const spreadPct = ((pricey.total - cheap.total) / cheap.total) * 100;
+        const avgFscShare = rows.reduce((s, r) => s + r.fscDollars / r.total, 0) / rows.length * 100;
+        const fscSpread = pricey.fscPct - cheap.fscPct;
+        const takeaways = [];
+        takeaways.push(`<b>${cheap.name} is the low-cost carrier on this lane at $${cheap.total.toFixed(0)}.</b> ${pricey.name} is $${(pricey.total - cheap.total).toFixed(0)} (${spreadPct.toFixed(1)}%) higher — usually reflects service-level differential, not inefficiency.`);
+        takeaways.push(`<b>FSC is ${avgFscShare.toFixed(0)}% of total cost on average.</b> At current diesel, the FSC line matters more than base rate negotiation. A 5pp FSC cap would save ~$${(cheap.linehaul * 5 / 100).toFixed(0)} per shipment vs uncapped on this lane.`);
+        if (fscSpread > 3) {
+          takeaways.push(`<b>${fscSpread.toFixed(1)}pp FSC spread across carriers.</b> Same diesel, different pass-through math. Worth flagging in carrier selection for FSC-sensitive customers.`);
+        }
+        if (cheap.linehaul <= 125.5) {
+          takeaways.push(`<b>Lane is hitting the minimum charge floor ($125).</b> Economics are driven by min charge, not rated weight — a higher weight breakpoint or a density-based deal would reprice this lane fundamentally.`);
+        }
+        if (roadMiles < 250) {
+          takeaways.push(`<b>Short-haul lane (${roadMiles} mi).</b> Regional specialists (Saia, Southeastern, R+L) often beat national carriers on <500 mi lanes. Worth shopping the regional bid.`);
+        } else if (roadMiles > 1500) {
+          takeaways.push(`<b>Long-haul lane (${roadMiles} mi).</b> ODFL and XPO's network reach is the natural fit. Regionals will interline and lose transit-time competitiveness.`);
+        }
+        document.getElementById('ln-takeaways-card').classList.remove('hidden');
+        document.getElementById('ln-takeaways').innerHTML = takeaways.map(t => `<li>• ${t}</li>`).join('');
       } catch (e) {
         $('ln-results').innerHTML = `<p class="text-sm text-rose-600">Error: ${e.message}</p>`;
       }
