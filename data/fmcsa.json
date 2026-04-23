@@ -1,7 +1,7 @@
 {
   "note": "Parsed from FMCSA SAFER public company snapshot HTML. 24-month rolling inspection/crash counts.",
   "source_url_pattern": "https://safer.fmcsa.dot.gov/query.asp?searchtype=ANY&query_type=queryCarrierSnapshot&query_param=USDOT&query_string={DOT}",
-  "fetched_at": "2026-04-23T03:52:40.316581Z",
+  "fetched_at": "2026-04-23T04:07:21.863662Z",
   "carriers": [
     {
       "legal_name": "OLD DOMINION FREIGHT LINE INC",
