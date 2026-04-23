@@ -75,7 +75,8 @@ window.TabThule = {
       </div>
     `;
 
-    const map = L.map('thule-map').setView([45, -20], 2);
+    const mapEl = document.getElementById('thule-map');
+    const map = L.map(mapEl).setView([45, -20], 2);
     L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
       attribution: '© OpenStreetMap · Carto', maxZoom: 10,
     }).addTo(map);
@@ -85,6 +86,11 @@ window.TabThule = {
         radius: 8, color: typeColor[f.type] || '#475569', fillColor: typeColor[f.type] || '#475569', fillOpacity: 0.7, weight: 2,
       }).addTo(map).bindPopup(`<b>${f.name}</b><br/>${f.type}`);
     });
+    // Leaflet computes tile extent from container size at init time. If Tab D
+    // was hidden at mount (Alpine x-show), the container reads 0×0 and only
+    // the top-left tile renders. Re-invalidate size whenever it actually resizes.
+    const ro = new ResizeObserver(() => map.invalidateSize());
+    ro.observe(mapEl);
 
     const palette = ['#4f46e5', '#10b981', '#f59e0b', '#ec4899'];
     new Chart(document.getElementById('thule-seasonality'), {
