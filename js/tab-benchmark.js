@@ -16,10 +16,10 @@ window.TabBenchmark = {
         <div class="card">
           <h3>Carrier FSC (live, derived from diesel)</h3>
           <table class="data" id="bm-fsc-table">
-            <thead><tr><th>Carrier</th><th class="text-right">FSC %</th><th class="text-right">Δ vs 13 wk ago</th></tr></thead>
+            <thead><tr><th>Carrier</th><th></th><th class="text-right">FSC %</th><th class="text-right">Δ vs 13 wk ago</th></tr></thead>
             <tbody></tbody>
           </table>
-          <p class="text-xs text-slate-500 mt-2">Computed from each carrier's published linear FSC formula × this week's DOE diesel.</p>
+          <p class="text-xs text-slate-500 mt-2"><span class="chip bg-emerald-100 text-emerald-700">exact</span> = stepped lookup from published table · <span class="chip bg-slate-100 text-slate-600">est.</span> = linear approximation.</p>
         </div>
         <div class="card">
           <h3>Market indicators</h3>
@@ -48,12 +48,14 @@ window.TabBenchmark = {
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
         <div class="card">
-          <h3>Carrier yield trend (revenue per cwt)</h3>
-          <canvas id="bm-yield-chart" height="160"></canvas>
+          <h3>Quarterly revenue ($M)</h3>
+          <canvas id="bm-rev-chart" height="160"></canvas>
+          <p class="text-xs text-slate-500 mt-2">Source: SEC XBRL · standalone quarters (duration-filtered).</p>
         </div>
         <div class="card">
-          <h3>Carrier operating ratio</h3>
+          <h3>Operating ratio (derived from SEC XBRL)</h3>
           <canvas id="bm-or-chart" height="160"></canvas>
+          <p class="text-xs text-slate-500 mt-2">OR = 1 − (OperatingIncome / Revenue). Lower is better.</p>
         </div>
       </div>
 
@@ -99,8 +101,12 @@ window.TabBenchmark = {
     document.querySelector('#bm-fsc-table tbody').innerHTML = fscEntries.map(([name, pct]) => {
       const delta = pct - fsc13wk[name];
       const cls = delta >= 0 ? 'delta-up' : 'delta-down';
+      const badge = FSC.isExact(fsc.carriers[name])
+        ? '<span class="chip bg-emerald-100 text-emerald-700">exact</span>'
+        : '<span class="chip bg-slate-100 text-slate-600">est.</span>';
       return `<tr>
         <td>${name}</td>
+        <td>${badge}</td>
         <td class="text-right font-medium">${pct.toFixed(1)}%</td>
         <td class="text-right ${cls}">${delta >= 0 ? '+' : ''}${delta.toFixed(1)}pp</td>
       </tr>`;
@@ -159,28 +165,35 @@ window.TabBenchmark = {
     }).join('');
 
     const kpiPalette = ['#4f46e5', '#0ea5e9', '#10b981', '#f59e0b'];
-    const periods = kpis.carriers[0].history.map(h => h.period);
-    new Chart(document.getElementById('bm-yield-chart'), {
+    const carriersWithData = (kpis.carriers || []).filter(c => (c.history || []).length);
+    const allPeriods = [...new Set(carriersWithData.flatMap(c => c.history.map(h => h.period)))].sort();
+    const byPeriod = (c, field) => allPeriods.map(p => {
+      const h = c.history.find(x => x.period === p);
+      if (!h) return null;
+      if (field === 'revenue_m') return h.revenue_usd != null ? h.revenue_usd / 1_000_000 : null;
+      return h[field] ?? null;
+    });
+    new Chart(document.getElementById('bm-rev-chart'), {
       type: 'line',
       data: {
-        labels: periods,
-        datasets: kpis.carriers.map((c, i) => ({
-          label: c.name, borderColor: kpiPalette[i], backgroundColor: kpiPalette[i],
-          data: c.history.map(h => h.yield), tension: 0.25,
+        labels: allPeriods,
+        datasets: carriersWithData.map((c, i) => ({
+          label: c.name, borderColor: kpiPalette[i % kpiPalette.length], backgroundColor: kpiPalette[i % kpiPalette.length],
+          data: byPeriod(c, 'revenue_m'), tension: 0.25, spanGaps: true,
         })),
       },
-      options: { plugins: { legend: { position: 'bottom' } } },
+      options: { plugins: { legend: { position: 'bottom' } }, scales: { y: { ticks: { callback: v => '$' + v } } } },
     });
     new Chart(document.getElementById('bm-or-chart'), {
       type: 'line',
       data: {
-        labels: periods,
-        datasets: kpis.carriers.map((c, i) => ({
-          label: c.name, borderColor: kpiPalette[i], backgroundColor: kpiPalette[i],
-          data: c.history.map(h => h.or), tension: 0.25,
+        labels: allPeriods,
+        datasets: carriersWithData.map((c, i) => ({
+          label: c.name, borderColor: kpiPalette[i % kpiPalette.length], backgroundColor: kpiPalette[i % kpiPalette.length],
+          data: byPeriod(c, 'operating_ratio_pct'), tension: 0.25, spanGaps: true,
         })),
       },
-      options: { plugins: { legend: { position: 'bottom' } } },
+      options: { plugins: { legend: { position: 'bottom' } }, scales: { y: { ticks: { callback: v => v + '%' } } } },
     });
 
     document.getElementById('bm-lanes').innerHTML = lanes.lanes.map(l => {

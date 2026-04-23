@@ -56,6 +56,14 @@
       <div id="tab-thule"></div>
     </section>
 
+    <section x-show="active === 'density'" x-transition>
+      <div id="tab-density"></div>
+    </section>
+
+    <section x-show="active === 'lane'" x-transition>
+      <div id="tab-lane"></div>
+    </section>
+
   </main>
 
   <footer class="max-w-7xl mx-auto px-6 py-8 text-xs text-slate-400">
@@ -73,6 +81,8 @@ function app() {
       { id: 'classcalc', label: 'B · Class Calculator' },
       { id: 'scorecard', label: 'C · Carrier Scorecard' },
       { id: 'thule',     label: 'D · Thule Intel' },
+      { id: 'density',   label: 'E · Density Audit' },
+      { id: 'lane',      label: 'F · Lane Pricing' },
     ],
     async init() {
       try {
@@ -86,6 +96,8 @@ function app() {
       window.TabClassCalc?.mount('#tab-classcalc');
       window.TabScorecard?.mount('#tab-scorecard');
       window.TabThule?.mount('#tab-thule');
+      window.TabDensity?.mount('#tab-density');
+      window.TabLane?.mount('#tab-lane');
     }
   };
 }
@@ -95,5 +107,7 @@ function app() {
 <script src="js/tab-classcalc.js"></script>
 <script src="js/tab-scorecard.js"></script>
 <script src="js/tab-thule.js"></script>
+<script src="js/tab-density.js"></script>
+<script src="js/tab-lane.js"></script>
 </body>
 </html>
