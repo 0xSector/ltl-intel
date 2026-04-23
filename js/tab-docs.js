@@ -111,6 +111,37 @@ window.TabDocs = {
         </ul>
       </div>
 
+      <div class="card mb-6">
+        <h3>Future improvements · paid endpoints worth adding</h3>
+        <p class="text-xs text-slate-500 mb-3">Public data gets us ~80% of the way. These paid sources would close the remaining gap where it matters most.</p>
+        <table class="data text-xs">
+          <thead><tr><th>Source</th><th>Unlocks</th><th>Fits tab</th></tr></thead>
+          <tbody>
+            <tr><td><b>SMC³ CzarLite / RateWare XL</b></td><td>Real LTL base tariff rates — replaces Tab F's illustrative rate model with defensible quotes</td><td>F · Lane Pricing</td></tr>
+            <tr><td><b>PC*Miler API</b> (Trimble)</td><td>Actual road routing &amp; HHG miles — removes haversine ±15% error</td><td>F · Lane Pricing</td></tr>
+            <tr><td><b>DAT iQ / RateView</b></td><td>Real lane rate benchmarks &amp; 12-month history by origin-dest-equipment — restores a real "lane pulse"</td><td>A · Market Benchmark</td></tr>
+            <tr><td><b>FreightWaves SONAR</b></td><td>Real-time tender volume/rejection indices per lane — leading indicator for LTL pricing by 4–6 weeks</td><td>A · Market Benchmark</td></tr>
+            <tr><td><b>ImportGenius / Panjiva full</b></td><td>Real inbound BOL data — replaces Tab D's inferred container estimates with actual shipper-carrier relationships</td><td>D · Thule Intel</td></tr>
+            <tr><td><b>NMFTA ClassIT</b></td><td>Item-specific NMFC class lookups (handling/stowability/liability, not just density)</td><td>B · Class Calc · E · Density Audit</td></tr>
+            <tr><td><b>Mastio Quality Awards</b></td><td>Shipper-surveyed LTL service rankings — the industry-standard qualitative benchmark</td><td>C · Carrier Scorecard</td></tr>
+            <tr><td><b>FMCSA SMS subscription API</b></td><td>Detailed BASIC percentile scores beyond SAFER's public snapshot</td><td>C · Carrier Scorecard</td></tr>
+            <tr><td><b>Carrier EDI 210/214 feeds</b></td><td>Real shipment-level data from your own accounts — would make Tab E run on live data instead of CSV paste</td><td>E · Density Audit</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card mb-6">
+        <h3>Future improvements · free but unbuilt</h3>
+        <ul class="text-xs text-slate-700 space-y-1.5 leading-relaxed">
+          <li>• <b>Exact FSC tables for remaining 5 carriers</b> (Estes, ArcBest, TFI, R+L, Southeastern) — transcribe published tariffs to replace linear approximations.</li>
+          <li>• <b>Yield extraction for XPO &amp; ArcBest</b> — per-filer 8-K parsers for their operating statistics format.</li>
+          <li>• <b>OSRM public demo routing</b> — free road distance for Tab F (rate-limited but workable for light use).</li>
+          <li>• <b>Deep-linkable tab state</b> — URL hash so comparisons in Tab C are shareable.</li>
+          <li>• <b>RSS/alerts feed</b> — weekly digest of what changed, published from the GitHub Action.</li>
+          <li>• <b>Chart PNG export</b> — one-click download for slide decks.</li>
+        </ul>
+      </div>
+
       <div class="card">
         <h3>Refresh pipeline</h3>
         <p class="text-xs text-slate-700 leading-relaxed mb-2">
