@@ -19,16 +19,6 @@ window.TabThule = {
         </div>
       </div>
 
-      <div class="mb-6 card border-l-4 border-indigo-500">
-        <h3>Key takeaways</h3>
-        <ul class="text-sm text-slate-700 space-y-2 leading-relaxed">
-          <li>• <b>Two peaks, one network.</b> Roof racks and bike carriers peak Apr–Jun; ski carriers peak Nov–Feb. A single flat rate card underprices summer peak capacity and overcharges winter trough — argue for a peak-season surcharge or a two-curve FSC floor.</li>
-          <li>• <b>Inbound concentrated at NY/NJ port.</b> Gdańsk, Antwerp, Gothenburg all flow through Newark — that's the short-haul outbound from Seymour/Shelton into NYC/Boston/Philly/DC. This is the LTL sweet spot in Thule's network; price it to win.</li>
-          <li>• <b>Retail DC skew matters.</b> REI (WA, PA, AZ) and Amazon (nationwide) imply long-haul flows out of CT; Dick's (PA, GA, IN) is more regional. The lane mix is bimodal — don't average it.</li>
-          <li>• <b>Seymour ↔ Shelton cluster.</b> Two Connecticut facilities 10 miles apart = internal shuttles that aren't real freight but can leak into the LTL book if not carved out. Verify billing treatment.</li>
-          <li>• <b>Thule is growing inventory efficiency.</b> Their 2025 annual report flags SEK 1.2B freed from inventory — that typically means smaller, more frequent shipments. More handling units per dollar of revenue = accessorial exposure growing. Renegotiate accessorials proactively.</li>
-        </ul>
-      </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
         <div class="card">
