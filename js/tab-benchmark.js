@@ -20,10 +20,12 @@ window.TabBenchmark = {
         </div>
         <div class="card">
           <h3>Carrier FSC (live, derived from diesel)</h3>
-          <table class="data" id="bm-fsc-table">
-            <thead><tr><th>Carrier</th><th></th><th class="text-right">FSC %</th><th class="text-right">Δ vs 13 wk ago</th></tr></thead>
-            <tbody></tbody>
-          </table>
+          <div class="scroll-x">
+            <table class="data" id="bm-fsc-table">
+              <thead><tr><th>Carrier</th><th></th><th class="text-right">FSC %</th><th class="text-right">Δ vs 13 wk ago</th></tr></thead>
+              <tbody></tbody>
+            </table>
+          </div>
           <p class="text-xs text-slate-500 mt-2"><span class="chip bg-emerald-100 text-emerald-700">exact</span> = stepped lookup from published table · <span class="chip bg-slate-100 text-slate-600">est.</span> = linear approximation.</p>
         </div>
         <div class="card">
@@ -43,10 +45,12 @@ window.TabBenchmark = {
           <label class="text-sm">Base linehaul ($)
             <input id="bm-base" type="number" value="1000" class="mt-1 w-full border border-slate-300 rounded px-2 py-1.5"/>
           </label>
-          <table class="data mt-3" id="bm-allin-table">
-            <thead><tr><th>Carrier</th><th class="text-right">FSC %</th><th class="text-right">FSC $</th><th class="text-right">All-in $</th></tr></thead>
-            <tbody></tbody>
-          </table>
+          <div class="scroll-x mt-3">
+            <table class="data" id="bm-allin-table">
+              <thead><tr><th>Carrier</th><th class="text-right">FSC %</th><th class="text-right">FSC $</th><th class="text-right">All-in $</th></tr></thead>
+              <tbody></tbody>
+            </table>
+          </div>
           <p class="text-xs text-slate-500 mt-2" id="bm-allin-spread"></p>
         </div>
       </div>

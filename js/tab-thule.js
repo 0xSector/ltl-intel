@@ -36,12 +36,14 @@ window.TabThule = {
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
         <div class="card">
           <h3>Inbound ocean lanes <span class="chip bg-amber-100 text-amber-800">inferred</span></h3>
-          <table class="data">
-            <thead><tr><th>From</th><th>To</th><th class="text-right">Est. containers</th><th>Commodities</th></tr></thead>
-            <tbody>${d.imports.lanes.map(l => `
-              <tr><td>${l.from}</td><td>${l.to}</td><td class="text-right font-medium">${l.containers_est.toLocaleString()}</td><td class="text-slate-500">${l.commodities}</td></tr>
-            `).join('')}</tbody>
-          </table>
+          <div class="scroll-x">
+            <table class="data">
+              <thead><tr><th>From</th><th>To</th><th class="text-right">Est. containers</th><th>Commodities</th></tr></thead>
+              <tbody>${d.imports.lanes.map(l => `
+                <tr><td class="whitespace-nowrap">${l.from}</td><td class="whitespace-nowrap">${l.to}</td><td class="text-right font-medium">${l.containers_est.toLocaleString()}</td><td class="text-slate-500">${l.commodities}</td></tr>
+              `).join('')}</tbody>
+            </table>
+          </div>
           <p class="text-xs text-slate-500 mt-2">Ports and origin facilities are real; container counts are order-of-magnitude estimates. Actual volumes require ImportGenius/Panjiva subscription data.</p>
         </div>
         <div class="card">

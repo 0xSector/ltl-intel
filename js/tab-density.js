@@ -227,25 +227,27 @@ BOL-1010,48,40,42,340,2,110,842.00`;
       }[s] || s);
 
       $('da-details').innerHTML = `
-        <table class="data">
-          <thead><tr>
-            <th>ID</th><th class="text-right">Weight</th><th class="text-right">ft³</th><th class="text-right">Density</th>
-            <th class="text-right">Declared</th><th class="text-right">Actual</th>
-            <th>Status</th><th class="text-right">Impact</th>
-          </tr></thead>
-          <tbody>${findings.map(f => `
-            <tr>
-              <td class="font-mono text-xs">${f.id}</td>
-              <td class="text-right">${f.wt ? f.wt.toFixed(0) : '—'}${f.qty > 1 ? ` × ${f.qty}` : ''}</td>
-              <td class="text-right">${f.density ? ((f.wt * f.qty) / f.density).toFixed(1) : '—'}</td>
-              <td class="text-right">${f.density ? f.density.toFixed(1) : '—'}</td>
-              <td class="text-right">${f.declared ?? '—'}</td>
-              <td class="text-right">${f.actualClass ?? '—'}</td>
-              <td>${statusChip(f.status)}</td>
-              <td class="text-right ${f.impactDollars > 0 ? 'delta-up' : f.impactDollars < 0 ? 'delta-down' : ''}">${f.impactDollars ? (f.impactDollars >= 0 ? '+' : '') + '$' + f.impactDollars.toFixed(2) : '—'}</td>
-            </tr>
-          `).join('')}</tbody>
-        </table>
+        <div class="scroll-x">
+          <table class="data">
+            <thead><tr>
+              <th>ID</th><th class="text-right">Weight</th><th class="text-right">ft³</th><th class="text-right">Density</th>
+              <th class="text-right">Declared</th><th class="text-right">Actual</th>
+              <th>Status</th><th class="text-right">Impact</th>
+            </tr></thead>
+            <tbody>${findings.map(f => `
+              <tr>
+                <td class="font-mono text-xs whitespace-nowrap">${f.id}</td>
+                <td class="text-right whitespace-nowrap">${f.wt ? f.wt.toFixed(0) : '—'}${f.qty > 1 ? ` × ${f.qty}` : ''}</td>
+                <td class="text-right">${f.density ? ((f.wt * f.qty) / f.density).toFixed(1) : '—'}</td>
+                <td class="text-right">${f.density ? f.density.toFixed(1) : '—'}</td>
+                <td class="text-right">${f.declared ?? '—'}</td>
+                <td class="text-right">${f.actualClass ?? '—'}</td>
+                <td class="whitespace-nowrap">${statusChip(f.status)}</td>
+                <td class="text-right whitespace-nowrap ${f.impactDollars > 0 ? 'delta-up' : f.impactDollars < 0 ? 'delta-down' : ''}">${f.impactDollars ? (f.impactDollars >= 0 ? '+' : '') + '$' + f.impactDollars.toFixed(2) : '—'}</td>
+              </tr>
+            `).join('')}</tbody>
+          </table>
+        </div>
       `;
 
       window._daFindings = findings;

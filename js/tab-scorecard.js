@@ -144,14 +144,16 @@ window.TabScorecard = {
       ];
       const chosen = carriers.filter(c => selected.has(c.name));
       body.innerHTML = `
-        <table class="data">
-          <thead><tr><th>Metric</th>${chosen.map(c => `<th class="text-right">${c.name}</th>`).join('')}</tr></thead>
-          <tbody>
-            ${rows.map(([label, acc, fmt]) =>
-              `<tr><td class="text-slate-600">${label}</td>${chosen.map(c => `<td class="text-right font-medium">${fmt(acc(c))}</td>`).join('')}</tr>`
-            ).join('')}
-          </tbody>
-        </table>
+        <div class="scroll-x">
+          <table class="data">
+            <thead><tr><th>Metric</th>${chosen.map(c => `<th class="text-right whitespace-nowrap">${c.name}</th>`).join('')}</tr></thead>
+            <tbody>
+              ${rows.map(([label, acc, fmt]) =>
+                `<tr><td class="text-slate-600 whitespace-nowrap">${label}</td>${chosen.map(c => `<td class="text-right font-medium whitespace-nowrap">${fmt(acc(c))}</td>`).join('')}</tr>`
+              ).join('')}
+            </tbody>
+          </table>
+        </div>
       `;
     };
 

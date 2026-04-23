@@ -14,6 +14,7 @@ window.TabDocs = {
 
       <div class="mb-6 card">
         <h3>Data sources</h3>
+        <div class="scroll-x">
         <table class="data text-xs">
           <thead><tr><th>Source</th><th>What it provides</th><th>Refresh</th><th>Auth</th></tr></thead>
           <tbody>
@@ -29,6 +30,7 @@ window.TabDocs = {
             <tr><td><b>OpenStreetMap via Carto</b></td><td>Tab D map tiles</td><td>On demand</td><td>None</td></tr>
           </tbody>
         </table>
+        </div>
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
@@ -114,6 +116,7 @@ window.TabDocs = {
       <div class="card mb-6">
         <h3>Future improvements · paid endpoints worth adding</h3>
         <p class="text-xs text-slate-500 mb-3">Public data gets us ~80% of the way. These paid sources would close the remaining gap where it matters most.</p>
+        <div class="scroll-x">
         <table class="data text-xs">
           <thead><tr><th>Source</th><th>Unlocks</th><th>Fits tab</th></tr></thead>
           <tbody>
@@ -128,6 +131,7 @@ window.TabDocs = {
             <tr><td><b>Carrier EDI 210/214 feeds</b></td><td>Real shipment-level data from your own accounts — would make Tab E run on live data instead of CSV paste</td><td>E · Density Audit</td></tr>
           </tbody>
         </table>
+        </div>
       </div>
 
       <div class="card mb-6">

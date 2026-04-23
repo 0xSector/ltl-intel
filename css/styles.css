@@ -35,7 +35,46 @@
   color: rgb(51 65 85);
 }
 table.data { width: 100%; font-size: 0.875rem; }
-table.data th { text-align: left; font-weight: 500; color: rgb(100 116 139); padding: 0.5rem 0.75rem; border-bottom: 1px solid rgb(226 232 240); }
+table.data th { text-align: left; font-weight: 500; color: rgb(100 116 139); padding: 0.5rem 0.75rem; border-bottom: 1px solid rgb(226 232 240); white-space: nowrap; }
 table.data td { padding: 0.5rem 0.75rem; border-bottom: 1px solid rgb(241 245 249); }
 table.data tr:last-child td { border-bottom: 0; }
 .leaflet-container { border-radius: 0.5rem; }
+
+/* Horizontally scrollable wrapper for wide tables on narrow screens */
+.scroll-x {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+/* Horizontal scroll for the tab nav on mobile */
+.tabs-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.tabs-scroll::-webkit-scrollbar { display: none; }
+
+/* Mobile adjustments (< 640px) */
+@media (max-width: 640px) {
+  .card {
+    padding: 0.875rem;
+    border-radius: 0.625rem;
+  }
+  .card h3 {
+    font-size: 0.8125rem;
+    margin-bottom: 0.5rem;
+  }
+  .kpi { font-size: 1.25rem; }
+  .kpi-sub { font-size: 0.6875rem; }
+  table.data { font-size: 0.75rem; }
+  table.data th, table.data td { padding: 0.375rem 0.5rem; }
+  .chip { font-size: 0.65rem; padding: 0.125rem 0.4rem; }
+  /* Tighten input heights on mobile */
+  input[type="number"], input[type="text"], select, textarea {
+    font-size: 16px; /* prevents iOS zoom on focus */
+  }
+}

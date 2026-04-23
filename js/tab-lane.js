@@ -99,7 +99,7 @@ window.TabLane = {
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
         <div class="lg:col-span-2 card">
           <h3>Lane</h3>
-          <div class="grid grid-cols-2 md:grid-cols-5 gap-3 text-sm mb-3">
+          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 text-sm mb-3">
             <label>Origin ZIP<input id="ln-o" type="text" value="06483" class="mt-1 w-full border border-slate-300 rounded px-2 py-1.5"/></label>
             <label>Dest ZIP<input   id="ln-d" type="text" value="90210" class="mt-1 w-full border border-slate-300 rounded px-2 py-1.5"/></label>
             <label>Weight (lb)<input id="ln-wt" type="number" value="1200" class="mt-1 w-full border border-slate-300 rounded px-2 py-1.5"/></label>
@@ -166,25 +166,27 @@ window.TabLane = {
         }).sort((a, b) => a.total - b.total);
 
         $('ln-results').innerHTML = `
-          <table class="data">
-            <thead><tr>
-              <th>Carrier</th><th></th>
-              <th class="text-right">$/cwt</th><th class="text-right">Linehaul</th>
-              <th class="text-right">FSC %</th><th class="text-right">FSC $</th>
-              <th class="text-right">Total</th>
-            </tr></thead>
-            <tbody>${rows.map((r, i) => `
-              <tr${i === 0 ? ' class="bg-emerald-50"' : ''}>
-                <td class="font-medium">${r.name}${i === 0 ? ' <span class="chip bg-emerald-100 text-emerald-700 ml-1">lowest</span>' : ''}</td>
-                <td>${r.isExact ? '<span class="chip bg-emerald-100 text-emerald-700">exact</span>' : '<span class="chip bg-slate-100 text-slate-500">est.</span>'}</td>
-                <td class="text-right">$${r.rate_per_cwt.toFixed(2)}</td>
-                <td class="text-right">$${r.linehaul.toFixed(2)}</td>
-                <td class="text-right text-slate-500">${r.fscPct.toFixed(1)}%</td>
-                <td class="text-right">$${r.fscDollars.toFixed(2)}</td>
-                <td class="text-right font-semibold">$${r.total.toFixed(2)}</td>
-              </tr>
-            `).join('')}</tbody>
-          </table>
+          <div class="scroll-x">
+            <table class="data">
+              <thead><tr>
+                <th>Carrier</th><th></th>
+                <th class="text-right">$/cwt</th><th class="text-right">Linehaul</th>
+                <th class="text-right">FSC %</th><th class="text-right">FSC $</th>
+                <th class="text-right">Total</th>
+              </tr></thead>
+              <tbody>${rows.map((r, i) => `
+                <tr${i === 0 ? ' class="bg-emerald-50"' : ''}>
+                  <td class="font-medium whitespace-nowrap">${r.name}${i === 0 ? ' <span class="chip bg-emerald-100 text-emerald-700 ml-1">lowest</span>' : ''}</td>
+                  <td>${r.isExact ? '<span class="chip bg-emerald-100 text-emerald-700">exact</span>' : '<span class="chip bg-slate-100 text-slate-500">est.</span>'}</td>
+                  <td class="text-right">$${r.rate_per_cwt.toFixed(2)}</td>
+                  <td class="text-right">$${r.linehaul.toFixed(2)}</td>
+                  <td class="text-right text-slate-500">${r.fscPct.toFixed(1)}%</td>
+                  <td class="text-right">$${r.fscDollars.toFixed(2)}</td>
+                  <td class="text-right font-semibold">$${r.total.toFixed(2)}</td>
+                </tr>
+              `).join('')}</tbody>
+            </table>
+          </div>
           <div class="mt-4 text-xs text-slate-500">
             Weight band: <b>${rows[0].band}</b> ·
             Distance mult: <b>${rows[0].distMult.toFixed(2)}×</b> ·

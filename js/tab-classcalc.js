@@ -52,7 +52,7 @@ window.TabClassCalc = {
 
           <div class="card">
             <h3>Single item</h3>
-            <div class="grid grid-cols-2 md:grid-cols-5 gap-3 text-sm">
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 text-sm">
               <label>Length (in)<input id="cc-l" type="number" value="48" class="mt-1 w-full border border-slate-300 rounded px-2 py-1.5"/></label>
               <label>Width (in)<input id="cc-w" type="number" value="40" class="mt-1 w-full border border-slate-300 rounded px-2 py-1.5"/></label>
               <label>Height (in)<input id="cc-h" type="number" value="36" class="mt-1 w-full border border-slate-300 rounded px-2 py-1.5"/></label>
@@ -65,10 +65,12 @@ window.TabClassCalc = {
           <div class="card">
             <h3>Mixed pallet</h3>
             <p class="text-xs text-slate-500 mb-3">Add multiple line items; we'll compute effective density and class on the combined shipment.</p>
-            <table class="data mb-3">
-              <thead><tr><th>L</th><th>W</th><th>H</th><th>Weight</th><th>Qty</th><th></th></tr></thead>
-              <tbody id="cc-mp-rows"></tbody>
-            </table>
+            <div class="scroll-x mb-3">
+              <table class="data">
+                <thead><tr><th>L</th><th>W</th><th>H</th><th>Weight</th><th>Qty</th><th></th></tr></thead>
+                <tbody id="cc-mp-rows"></tbody>
+              </table>
+            </div>
             <div class="flex gap-2">
               <button id="cc-mp-add" class="text-sm border border-slate-300 rounded px-3 py-1.5 hover:bg-slate-50">+ Add item</button>
               <button id="cc-mp-calc" class="text-sm bg-indigo-600 hover:bg-indigo-700 text-white rounded px-3 py-1.5">Calculate combined</button>
