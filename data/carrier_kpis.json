@@ -1,6 +1,6 @@
 {
   "note": "Quarterly revenue + derived operating ratio from SEC XBRL companyfacts. Yield and tonnage are carrier-specific metrics not in GAAP XBRL \u2014 they require parsing earnings releases separately.",
-  "fetched_at": "2026-04-27T14:38:46.110263Z",
+  "fetched_at": "2026-05-04T14:42:03.082768Z",
   "carriers": [
     {
       "name": "ODFL",
@@ -112,6 +112,13 @@
           "revenue_usd": 839644000.0,
           "operating_income_usd": 118610000.0,
           "operating_ratio_pct": 85.87
+        },
+        {
+          "period": "2026Q1",
+          "end": "2026-03-31",
+          "revenue_usd": 806226000.0,
+          "operating_income_usd": 66806000.0,
+          "operating_ratio_pct": 91.71
         }
       ],
       "source": "sec_companyfacts"
@@ -121,13 +128,6 @@
       "cik": "0001166003",
       "revenue_tag_used": "RevenueFromContractWithCustomerExcludingAssessedTax",
       "history": [
-        {
-          "period": "2023Q3",
-          "end": "2023-09-30",
-          "revenue_usd": 1980000000.0,
-          "operating_income_usd": 154000000.0,
-          "operating_ratio_pct": 92.22
-        },
         {
           "period": "2023Q4",
           "end": "2023-12-31",
@@ -176,6 +176,13 @@
           "revenue_usd": 2111000000.0,
           "operating_income_usd": 164000000.0,
           "operating_ratio_pct": 92.23
+        },
+        {
+          "period": "2026Q1",
+          "end": "2026-03-31",
+          "revenue_usd": 2096000000.0,
+          "operating_income_usd": 174000000.0,
+          "operating_ratio_pct": 91.7
         }
       ],
       "source": "sec_companyfacts"
@@ -185,13 +192,6 @@
       "cik": "0000894405",
       "revenue_tag_used": "RevenueFromContractWithCustomerExcludingAssessedTax",
       "history": [
-        {
-          "period": "2023Q2",
-          "end": "2023-06-30",
-          "revenue_usd": 1103464000.0,
-          "operating_income_usd": 42116000.0,
-          "operating_ratio_pct": 96.18
-        },
         {
           "period": "2023Q3",
           "end": "2023-09-30",
@@ -240,6 +240,13 @@
           "revenue_usd": 1048137000.0,
           "operating_income_usd": 54627000.0,
           "operating_ratio_pct": 94.79
+        },
+        {
+          "period": "2026Q1",
+          "end": "2026-03-31",
+          "revenue_usd": 998786000.0,
+          "operating_income_usd": 3430000.0,
+          "operating_ratio_pct": 99.66
         }
       ],
       "source": "sec_companyfacts"

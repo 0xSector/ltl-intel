@@ -1,7 +1,7 @@
 {
   "note": "Parsed from FMCSA SAFER public company snapshot HTML. 24-month rolling inspection/crash counts.",
   "source_url_pattern": "https://safer.fmcsa.dot.gov/query.asp?searchtype=ANY&query_type=queryCarrierSnapshot&query_param=USDOT&query_string={DOT}",
-  "fetched_at": "2026-04-27T14:38:51.031696Z",
+  "fetched_at": "2026-05-04T14:42:09.092290Z",
   "carriers": [
     {
       "legal_name": "OLD DOMINION FREIGHT LINE INC",
@@ -9,15 +9,15 @@
       "drivers": 11620,
       "mcs150_date": "07/08/2024",
       "inspections_24mo": {
-        "vehicle": 2865,
-        "driver": 4488,
-        "hazmat": 1416,
+        "vehicle": 2840,
+        "driver": 4458,
+        "hazmat": 1411,
         "iep": 0
       },
       "out_of_service_24mo": {
-        "vehicle": 247,
+        "vehicle": 244,
         "driver": 26,
-        "hazmat": 15,
+        "hazmat": 16,
         "iep": 0
       },
       "out_of_service_pct": {
@@ -29,8 +29,8 @@
       "crashes_24mo": {
         "fatal": 21,
         "injury": 182,
-        "tow": 373,
-        "total": 576
+        "tow": 375,
+        "total": 578
       },
       "safety_rating": {
         "rating_date": "09/29/1995",
@@ -47,28 +47,28 @@
       "drivers": 7315,
       "mcs150_date": "04/13/2026",
       "inspections_24mo": {
-        "vehicle": 2760,
-        "driver": 3926,
-        "hazmat": 1484,
+        "vehicle": 2752,
+        "driver": 3919,
+        "hazmat": 1477,
         "iep": 0
       },
       "out_of_service_24mo": {
-        "vehicle": 397,
+        "vehicle": 398,
         "driver": 29,
         "hazmat": 30,
         "iep": 0
       },
       "out_of_service_pct": {
-        "vehicle": 14.4,
+        "vehicle": 14.5,
         "driver": 0.7,
         "hazmat": 2.0,
         "iep": 0.0
       },
       "crashes_24mo": {
         "fatal": 14,
-        "injury": 110,
-        "tow": 277,
-        "total": 401
+        "injury": 112,
+        "tow": 282,
+        "total": 408
       },
       "safety_rating": {
         "rating_date": "01/29/1991",
@@ -85,28 +85,28 @@
       "drivers": 12986,
       "mcs150_date": "09/25/2025",
       "inspections_24mo": {
-        "vehicle": 3259,
-        "driver": 4865,
-        "hazmat": 1441,
+        "vehicle": 3244,
+        "driver": 4838,
+        "hazmat": 1433,
         "iep": 0
       },
       "out_of_service_24mo": {
-        "vehicle": 429,
-        "driver": 48,
+        "vehicle": 428,
+        "driver": 47,
         "hazmat": 28,
         "iep": 0
       },
       "out_of_service_pct": {
         "vehicle": 13.2,
         "driver": 1.0,
-        "hazmat": 1.9,
+        "hazmat": 2.0,
         "iep": 0.0
       },
       "crashes_24mo": {
-        "fatal": 12,
-        "injury": 219,
-        "tow": 409,
-        "total": 640
+        "fatal": 13,
+        "injury": 215,
+        "tow": 411,
+        "total": 639
       },
       "safety_rating": {
         "rating_date": "12/22/1994",
@@ -123,28 +123,28 @@
       "drivers": 8821,
       "mcs150_date": "07/29/2025",
       "inspections_24mo": {
-        "vehicle": 2762,
-        "driver": 4600,
-        "hazmat": 1156,
+        "vehicle": 2756,
+        "driver": 4594,
+        "hazmat": 1155,
         "iep": 0
       },
       "out_of_service_24mo": {
-        "vehicle": 465,
-        "driver": 35,
-        "hazmat": 34,
+        "vehicle": 466,
+        "driver": 37,
+        "hazmat": 35,
         "iep": 0
       },
       "out_of_service_pct": {
-        "vehicle": 16.8,
+        "vehicle": 16.9,
         "driver": 0.8,
-        "hazmat": 2.9,
+        "hazmat": 3.0,
         "iep": 0.0
       },
       "crashes_24mo": {
         "fatal": 9,
         "injury": 202,
-        "tow": 364,
-        "total": 575
+        "tow": 360,
+        "total": 571
       },
       "safety_rating": {
         "rating_date": "01/29/2001",
@@ -162,12 +162,12 @@
       "mcs150_date": "05/22/2024",
       "inspections_24mo": {
         "vehicle": 1572,
-        "driver": 2447,
+        "driver": 2451,
         "hazmat": 694,
         "iep": 0
       },
       "out_of_service_24mo": {
-        "vehicle": 180,
+        "vehicle": 181,
         "driver": 18,
         "hazmat": 9,
         "iep": 0
@@ -181,8 +181,8 @@
       "crashes_24mo": {
         "fatal": 2,
         "injury": 114,
-        "tow": 218,
-        "total": 334
+        "tow": 222,
+        "total": 338
       },
       "safety_rating": {
         "rating_date": "11/01/1994",
@@ -199,13 +199,13 @@
       "drivers": 11335,
       "mcs150_date": "01/30/2026",
       "inspections_24mo": {
-        "vehicle": 8850,
-        "driver": 15588,
-        "hazmat": 508,
+        "vehicle": 8884,
+        "driver": 15634,
+        "hazmat": 510,
         "iep": 2
       },
       "out_of_service_24mo": {
-        "vehicle": 1582,
+        "vehicle": 1594,
         "driver": 90,
         "hazmat": 4,
         "iep": 0
@@ -219,8 +219,8 @@
       "crashes_24mo": {
         "fatal": 10,
         "injury": 237,
-        "tow": 459,
-        "total": 706
+        "tow": 460,
+        "total": 707
       },
       "safety_rating": {
         "rating_date": "02/20/2003",
@@ -237,28 +237,28 @@
       "drivers": 4379,
       "mcs150_date": "08/06/2025",
       "inspections_24mo": {
-        "vehicle": 2315,
-        "driver": 3498,
-        "hazmat": 937,
+        "vehicle": 2305,
+        "driver": 3492,
+        "hazmat": 931,
         "iep": 0
       },
       "out_of_service_24mo": {
-        "vehicle": 384,
+        "vehicle": 379,
         "driver": 36,
-        "hazmat": 26,
+        "hazmat": 25,
         "iep": 0
       },
       "out_of_service_pct": {
-        "vehicle": 16.6,
+        "vehicle": 16.4,
         "driver": 1.0,
-        "hazmat": 2.8,
+        "hazmat": 2.7,
         "iep": 0.0
       },
       "crashes_24mo": {
-        "fatal": 2,
-        "injury": 64,
+        "fatal": 3,
+        "injury": 65,
         "tow": 125,
-        "total": 191
+        "total": 193
       },
       "safety_rating": {
         "rating_date": "07/01/2002",
@@ -275,28 +275,28 @@
       "drivers": 10514,
       "mcs150_date": "08/09/2025",
       "inspections_24mo": {
-        "vehicle": 4541,
-        "driver": 6607,
-        "hazmat": 2941,
+        "vehicle": 4523,
+        "driver": 6592,
+        "hazmat": 2937,
         "iep": 0
       },
       "out_of_service_24mo": {
-        "vehicle": 563,
+        "vehicle": 565,
         "driver": 29,
         "hazmat": 48,
         "iep": 0
       },
       "out_of_service_pct": {
-        "vehicle": 12.4,
+        "vehicle": 12.5,
         "driver": 0.4,
         "hazmat": 1.6,
         "iep": 0.0
       },
       "crashes_24mo": {
         "fatal": 18,
-        "injury": 186,
-        "tow": 383,
-        "total": 587
+        "injury": 190,
+        "tow": 382,
+        "total": 590
       },
       "safety_rating": {
         "rating_date": "05/02/1990",
@@ -313,28 +313,28 @@
       "drivers": 3895,
       "mcs150_date": "03/30/2026",
       "inspections_24mo": {
-        "vehicle": 1223,
-        "driver": 1947,
-        "hazmat": 628,
+        "vehicle": 1229,
+        "driver": 1953,
+        "hazmat": 634,
         "iep": 0
       },
       "out_of_service_24mo": {
-        "vehicle": 122,
+        "vehicle": 124,
         "driver": 4,
-        "hazmat": 23,
+        "hazmat": 24,
         "iep": 0
       },
       "out_of_service_pct": {
-        "vehicle": 10.0,
+        "vehicle": 10.1,
         "driver": 0.2,
-        "hazmat": 3.7,
+        "hazmat": 3.8,
         "iep": 0.0
       },
       "crashes_24mo": {
-        "fatal": 8,
+        "fatal": 7,
         "injury": 79,
-        "tow": 118,
-        "total": 205
+        "tow": 116,
+        "total": 202
       },
       "safety_rating": {
         "rating_date": "08/30/1995",
