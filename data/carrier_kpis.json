@@ -1,19 +1,12 @@
 {
   "note": "Quarterly revenue + derived operating ratio from SEC XBRL companyfacts. Yield and tonnage are carrier-specific metrics not in GAAP XBRL \u2014 they require parsing earnings releases separately.",
-  "fetched_at": "2026-05-04T14:42:03.082768Z",
+  "fetched_at": "2026-05-11T15:00:44.521440Z",
   "carriers": [
     {
       "name": "ODFL",
       "cik": "0000878927",
       "revenue_tag_used": "RevenueFromContractWithCustomerIncludingAssessedTax",
       "history": [
-        {
-          "period": "2023Q2",
-          "end": "2023-06-30",
-          "revenue_usd": 1413189000.0,
-          "operating_income_usd": 391594000.0,
-          "operating_ratio_pct": 72.29
-        },
         {
           "period": "2023Q3",
           "end": "2023-09-30",
@@ -62,6 +55,13 @@
           "revenue_usd": 1406511000.0,
           "operating_income_usd": 360844000.0,
           "operating_ratio_pct": 74.34
+        },
+        {
+          "period": "2026Q1",
+          "end": "2026-03-31",
+          "revenue_usd": 1334696000.0,
+          "operating_income_usd": 317341000.0,
+          "operating_ratio_pct": 76.22
         }
       ],
       "source": "sec_companyfacts"
