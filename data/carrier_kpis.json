@@ -1,6 +1,6 @@
 {
   "note": "Quarterly revenue + derived operating ratio from SEC XBRL companyfacts. Yield and tonnage are carrier-specific metrics not in GAAP XBRL \u2014 they require parsing earnings releases separately.",
-  "fetched_at": "2026-06-01T16:01:01.914991Z",
+  "fetched_at": "2026-06-08T15:04:37.657559Z",
   "carriers": [
     {
       "name": "ODFL",

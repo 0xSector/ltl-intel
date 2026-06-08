@@ -1,349 +1,52 @@
 {
   "note": "Parsed from FMCSA SAFER public company snapshot HTML. 24-month rolling inspection/crash counts.",
   "source_url_pattern": "https://safer.fmcsa.dot.gov/query.asp?searchtype=ANY&query_type=queryCarrierSnapshot&query_param=USDOT&query_string={DOT}",
-  "fetched_at": "2026-06-01T16:01:13.988260Z",
+  "fetched_at": "2026-06-08T15:06:13.313442Z",
   "carriers": [
     {
-      "legal_name": "OLD DOMINION FREIGHT LINE INC",
-      "power_units": 10974,
-      "drivers": 11620,
-      "mcs150_date": "07/08/2024",
-      "inspections_24mo": {
-        "vehicle": 2791,
-        "driver": 4411,
-        "hazmat": 1390,
-        "iep": 0
-      },
-      "out_of_service_24mo": {
-        "vehicle": 232,
-        "driver": 25,
-        "hazmat": 16,
-        "iep": 0
-      },
-      "out_of_service_pct": {
-        "vehicle": 8.3,
-        "driver": 0.6,
-        "hazmat": 1.2,
-        "iep": 0.0
-      },
-      "crashes_24mo": {
-        "fatal": 19,
-        "injury": 186,
-        "tow": 370,
-        "total": 575
-      },
-      "safety_rating": {
-        "rating_date": "09/29/1995",
-        "review_date": "02/09/2023",
-        "rating": "Satisfactory",
-        "type": "Non-Ratable"
-      },
       "name": "ODFL",
-      "dot": "90849"
+      "dot": "90849",
+      "error": "HTTP Error 500: Server Error"
     },
     {
-      "legal_name": "SAIA MOTOR FREIGHT LINE LLC",
-      "power_units": 7428,
-      "drivers": 7315,
-      "mcs150_date": "05/05/2026",
-      "inspections_24mo": {
-        "vehicle": 2742,
-        "driver": 3925,
-        "hazmat": 1460,
-        "iep": 0
-      },
-      "out_of_service_24mo": {
-        "vehicle": 399,
-        "driver": 29,
-        "hazmat": 30,
-        "iep": 0
-      },
-      "out_of_service_pct": {
-        "vehicle": 14.6,
-        "driver": 0.7,
-        "hazmat": 2.1,
-        "iep": 0.0
-      },
-      "crashes_24mo": {
-        "fatal": 14,
-        "injury": 114,
-        "tow": 281,
-        "total": 409
-      },
-      "safety_rating": {
-        "rating_date": "01/29/1991",
-        "review_date": "01/28/2026",
-        "rating": "Satisfactory",
-        "type": "Non-Ratable"
-      },
       "name": "Saia",
-      "dot": "29124"
+      "dot": "29124",
+      "error": "The read operation timed out"
     },
     {
-      "legal_name": "XPO LOGISTICS FREIGHT INC",
-      "power_units": 10260,
-      "drivers": 12986,
-      "mcs150_date": "09/25/2025",
-      "inspections_24mo": {
-        "vehicle": 3193,
-        "driver": 4776,
-        "hazmat": 1403,
-        "iep": 0
-      },
-      "out_of_service_24mo": {
-        "vehicle": 417,
-        "driver": 45,
-        "hazmat": 28,
-        "iep": 0
-      },
-      "out_of_service_pct": {
-        "vehicle": 13.1,
-        "driver": 0.9,
-        "hazmat": 2.0,
-        "iep": 0.0
-      },
-      "crashes_24mo": {
-        "fatal": 13,
-        "injury": 214,
-        "tow": 407,
-        "total": 634
-      },
-      "safety_rating": {
-        "rating_date": "12/22/1994",
-        "review_date": "10/18/2023",
-        "rating": "Satisfactory",
-        "type": "Non-Ratable"
-      },
       "name": "XPO",
-      "dot": "241829"
+      "dot": "241829",
+      "error": "HTTP Error 500: Server Error"
     },
     {
-      "legal_name": "ESTES EXPRESS LINES",
-      "power_units": 9805,
-      "drivers": 8821,
-      "mcs150_date": "07/29/2025",
-      "inspections_24mo": {
-        "vehicle": 2698,
-        "driver": 4535,
-        "hazmat": 1126,
-        "iep": 0
-      },
-      "out_of_service_24mo": {
-        "vehicle": 454,
-        "driver": 38,
-        "hazmat": 35,
-        "iep": 0
-      },
-      "out_of_service_pct": {
-        "vehicle": 16.8,
-        "driver": 0.8,
-        "hazmat": 3.1,
-        "iep": 0.0
-      },
-      "crashes_24mo": {
-        "fatal": 10,
-        "injury": 207,
-        "tow": 357,
-        "total": 574
-      },
-      "safety_rating": {
-        "rating_date": "01/29/2001",
-        "review_date": "05/15/2012",
-        "rating": "Satisfactory",
-        "type": "Non-Ratable"
-      },
       "name": "Estes",
-      "dot": "121018"
+      "dot": "121018",
+      "error": "The read operation timed out"
     },
     {
-      "legal_name": "ABF FREIGHT SYSTEM INC",
-      "power_units": 4604,
-      "drivers": 6667,
-      "mcs150_date": "05/22/2024",
-      "inspections_24mo": {
-        "vehicle": 1541,
-        "driver": 2425,
-        "hazmat": 668,
-        "iep": 0
-      },
-      "out_of_service_24mo": {
-        "vehicle": 180,
-        "driver": 18,
-        "hazmat": 9,
-        "iep": 0
-      },
-      "out_of_service_pct": {
-        "vehicle": 11.7,
-        "driver": 0.7,
-        "hazmat": 1.3,
-        "iep": 0.0
-      },
-      "crashes_24mo": {
-        "fatal": 4,
-        "injury": 118,
-        "tow": 225,
-        "total": 347
-      },
-      "safety_rating": {
-        "rating_date": "11/01/1994",
-        "review_date": "02/18/2022",
-        "rating": "Satisfactory",
-        "type": "Non-Ratable"
-      },
       "name": "ArcBest",
-      "dot": "82866"
+      "dot": "82866",
+      "error": "HTTP Error 500: Server Error"
     },
     {
-      "legal_name": "SCHNEIDER NATIONAL CARRIERS INC",
-      "power_units": 9866,
-      "drivers": 11335,
-      "mcs150_date": "01/30/2026",
-      "inspections_24mo": {
-        "vehicle": 8832,
-        "driver": 15568,
-        "hazmat": 505,
-        "iep": 2
-      },
-      "out_of_service_24mo": {
-        "vehicle": 1576,
-        "driver": 88,
-        "hazmat": 3,
-        "iep": 0
-      },
-      "out_of_service_pct": {
-        "vehicle": 17.8,
-        "driver": 0.6,
-        "hazmat": 0.6,
-        "iep": 0.0
-      },
-      "crashes_24mo": {
-        "fatal": 9,
-        "injury": 232,
-        "tow": 457,
-        "total": 698
-      },
-      "safety_rating": {
-        "rating_date": "02/20/2003",
-        "review_date": "04/06/2023",
-        "rating": "Satisfactory",
-        "type": "Non-Ratable"
-      },
       "name": "Schneider",
-      "dot": "264184"
+      "dot": "264184",
+      "error": "HTTP Error 500: Server Error"
     },
     {
-      "legal_name": "TFORCE FREIGHT INC",
-      "power_units": 4155,
-      "drivers": 4379,
-      "mcs150_date": "08/06/2025",
-      "inspections_24mo": {
-        "vehicle": 2301,
-        "driver": 3484,
-        "hazmat": 939,
-        "iep": 0
-      },
-      "out_of_service_24mo": {
-        "vehicle": 387,
-        "driver": 33,
-        "hazmat": 26,
-        "iep": 0
-      },
-      "out_of_service_pct": {
-        "vehicle": 16.8,
-        "driver": 0.9,
-        "hazmat": 2.8,
-        "iep": 0.0
-      },
-      "crashes_24mo": {
-        "fatal": 4,
-        "injury": 62,
-        "tow": 125,
-        "total": 191
-      },
-      "safety_rating": {
-        "rating_date": "07/01/2002",
-        "review_date": "10/01/2025",
-        "rating": "Satisfactory",
-        "type": "Non-Ratable"
-      },
       "name": "TFI",
-      "dot": "121058"
+      "dot": "121058",
+      "error": "The read operation timed out"
     },
     {
-      "legal_name": "GREENWOOD MOTOR LINES INC",
-      "power_units": 10296,
-      "drivers": 10514,
-      "mcs150_date": "08/09/2025",
-      "inspections_24mo": {
-        "vehicle": 4477,
-        "driver": 6569,
-        "hazmat": 2881,
-        "iep": 0
-      },
-      "out_of_service_24mo": {
-        "vehicle": 571,
-        "driver": 31,
-        "hazmat": 49,
-        "iep": 0
-      },
-      "out_of_service_pct": {
-        "vehicle": 12.8,
-        "driver": 0.5,
-        "hazmat": 1.7,
-        "iep": 0.0
-      },
-      "crashes_24mo": {
-        "fatal": 17,
-        "injury": 194,
-        "tow": 379,
-        "total": 590
-      },
-      "safety_rating": {
-        "rating_date": "05/02/1990",
-        "review_date": "03/04/2024",
-        "rating": "Satisfactory",
-        "type": "Non-Ratable"
-      },
       "name": "R+L",
-      "dot": "63391"
+      "dot": "63391",
+      "error": "HTTP Error 500: Server Error"
     },
     {
-      "legal_name": "SOUTHEASTERN FREIGHT LINES LLC",
-      "power_units": 3177,
-      "drivers": 3895,
-      "mcs150_date": "03/30/2026",
-      "inspections_24mo": {
-        "vehicle": 1227,
-        "driver": 1963,
-        "hazmat": 625,
-        "iep": 0
-      },
-      "out_of_service_24mo": {
-        "vehicle": 124,
-        "driver": 4,
-        "hazmat": 24,
-        "iep": 0
-      },
-      "out_of_service_pct": {
-        "vehicle": 10.1,
-        "driver": 0.2,
-        "hazmat": 3.8,
-        "iep": 0.0
-      },
-      "crashes_24mo": {
-        "fatal": 7,
-        "injury": 82,
-        "tow": 111,
-        "total": 200
-      },
-      "safety_rating": {
-        "rating_date": "08/30/1995",
-        "review_date": "08/04/2004",
-        "rating": "Satisfactory",
-        "type": "Non-Ratable"
-      },
       "name": "Southeastern",
-      "dot": "63419"
+      "dot": "63419",
+      "error": "HTTP Error 500: Server Error"
     }
   ]
 }
