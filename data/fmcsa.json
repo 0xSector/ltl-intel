@@ -1,7 +1,7 @@
 {
   "note": "Parsed from FMCSA SAFER public company snapshot HTML. 24-month rolling inspection/crash counts.",
   "source_url_pattern": "https://safer.fmcsa.dot.gov/query.asp?searchtype=ANY&query_type=queryCarrierSnapshot&query_param=USDOT&query_string={DOT}",
-  "fetched_at": "2026-07-06T15:01:48.939771Z",
+  "fetched_at": "2026-07-13T16:19:32.507327Z",
   "carriers": [
     {
       "legal_name": "OLD DOMINION FREIGHT LINE INC",
@@ -271,9 +271,9 @@
     },
     {
       "legal_name": "GREENWOOD MOTOR LINES INC",
-      "power_units": 10296,
-      "drivers": 10514,
-      "mcs150_date": "08/09/2025",
+      "power_units": 10382,
+      "drivers": 10946,
+      "mcs150_date": "07/11/2026",
       "inspections_24mo": {
         "vehicle": 4441,
         "driver": 6521,
