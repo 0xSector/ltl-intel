@@ -1,11 +1,11 @@
 {
   "note": "Scraped from public monthly releases. CASS Information Systems, Logistics Managers' Index, American Trucking Associations.",
-  "fetched_at": "2026-08-10T14:49:09.037466Z",
+  "fetched_at": "2026-08-17T14:16:29.374475Z",
   "cass": {
-    "shipments_index": 1.009,
-    "expenditures_index": 3.64,
-    "period_slug": "june-2026",
-    "source_url": "https://www.cassinfo.com/freight-audit-payment/cass-transportation-indexes/june-2026"
+    "shipments_index": null,
+    "expenditures_index": 3.518,
+    "period_slug": "july-2026",
+    "source_url": "https://www.cassinfo.com/freight-audit-payment/cass-transportation-indexes/july-2026"
   },
   "lmi": {
     "headline": 68.9,
@@ -13,25 +13,17 @@
     "source_url": "https://www.the-lmi.com/july-2026-logistics-managers-index.html"
   },
   "ata": {
-    "tonnage_index": 113.1,
-    "mom_pct": 1.4,
-    "yoy_pct": null,
-    "source_url": "https://www.trucking.org/news-insights/ata-truck-tonnage-index-rose-01-june"
+    "error": "no ATA tonnage links found"
   },
   "indicators": {
     "CASS_Shipments": {
-      "latest": 1.009
+      "latest": null
     },
     "CASS_Expenditures": {
-      "latest": 3.64
+      "latest": 3.518
     },
     "LMI_Headline": {
       "latest": 68.9
-    },
-    "ATA_Tonnage": {
-      "latest": 113.1,
-      "mom_pct": 1.4,
-      "yoy_pct": null
     }
   }
 }
