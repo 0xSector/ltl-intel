@@ -1,52 +1,52 @@
 {
-  "fetched_at": "2026-08-31T19:43:53.585056Z",
+  "fetched_at": "2026-09-07T18:27:29.284173Z",
   "carriers": [
     {
       "name": "ODFL",
       "cik": "0000878927",
-      "history": [
-        {
-          "period": "2025Q1",
-          "filing_date": "2025-04-23",
-          "yield_per_cwt": 32.67,
-          "source_url": "https://www.sec.gov/Archives/edgar/data/878927/000095017025056982/odfl-ex99_1.htm"
-        },
-        {
-          "period": "2025Q2",
-          "filing_date": "2025-07-30",
-          "yield_per_cwt": 32.84,
-          "source_url": "https://www.sec.gov/Archives/edgar/data/878927/000095017025099899/odfl-ex99_1.htm"
-        },
-        {
-          "period": "2025Q3",
-          "filing_date": "2025-10-29",
-          "yield_per_cwt": 33.88,
-          "source_url": "https://www.sec.gov/Archives/edgar/data/878927/000119312525255040/odfl-ex99_1.htm"
-        },
-        {
-          "period": "2025Q4",
-          "filing_date": "2026-02-04",
-          "yield_per_cwt": 33.91,
-          "source_url": "https://www.sec.gov/Archives/edgar/data/878927/000119312526036791/odfl-ex99_1.htm"
-        },
-        {
-          "period": "2026Q1",
-          "filing_date": "2026-04-29",
-          "yield_per_cwt": 34.52,
-          "source_url": "https://www.sec.gov/Archives/edgar/data/878927/000087892726000009/odfl-ex99_1.htm"
-        },
-        {
-          "period": "2026Q2",
-          "filing_date": "2026-07-29",
-          "yield_per_cwt": 37.84,
-          "source_url": "https://www.sec.gov/Archives/edgar/data/878927/000087892726000021/odfl-ex99_1.htm"
-        }
-      ]
+      "error": "HTTP Error 503: Service Unavailable"
     },
     {
       "name": "Saia",
       "cik": "0001177702",
-      "error": "HTTP Error 503: Service Unavailable"
+      "history": [
+        {
+          "period": "2025Q1",
+          "filing_date": "2025-04-25",
+          "yield_per_cwt": 24.97,
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1177702/000095017025058331/saia-ex99_1.htm"
+        },
+        {
+          "period": "2025Q2",
+          "filing_date": "2025-07-25",
+          "yield_per_cwt": 25.2,
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1177702/000095017025098577/saia-ex99_1.htm"
+        },
+        {
+          "period": "2025Q3",
+          "filing_date": "2025-10-30",
+          "yield_per_cwt": 25.76,
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1177702/000119312525257441/saia-ex99_1.htm"
+        },
+        {
+          "period": "2025Q4",
+          "filing_date": "2026-02-10",
+          "yield_per_cwt": 26.13,
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1177702/000119312526043714/saia-ex99_1.htm"
+        },
+        {
+          "period": "2026Q1",
+          "filing_date": "2026-04-30",
+          "yield_per_cwt": 25.93,
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1177702/000119312526194062/saia-ex99_1.htm"
+        },
+        {
+          "period": "2026Q2",
+          "filing_date": "2026-07-30",
+          "yield_per_cwt": 27.18,
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1177702/000119312526324937/saia-ex99_1.htm"
+        }
+      ]
     }
   ]
 }
