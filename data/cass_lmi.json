@@ -1,6 +1,6 @@
 {
   "note": "Scraped from public monthly releases. CASS Information Systems, Logistics Managers' Index, American Trucking Associations.",
-  "fetched_at": "2026-09-21T18:57:40.626555Z",
+  "fetched_at": "2026-09-28T20:18:07.787857Z",
   "cass": {
     "shipments_index": 1.038,
     "expenditures_index": 3.722,
@@ -13,7 +13,10 @@
     "source_url": "https://www.the-lmi.com/august-2026-logistics-managers-index.html"
   },
   "ata": {
-    "error": "no ATA tonnage links found"
+    "tonnage_index": 112.7,
+    "mom_pct": null,
+    "yoy_pct": null,
+    "source_url": "https://www.trucking.org/news-insights/ata-truck-tonnage-index-fell-05-august"
   },
   "indicators": {
     "CASS_Shipments": {
@@ -24,6 +27,11 @@
     },
     "LMI_Headline": {
       "latest": 66.6
+    },
+    "ATA_Tonnage": {
+      "latest": 112.7,
+      "mom_pct": null,
+      "yoy_pct": null
     }
   }
 }
