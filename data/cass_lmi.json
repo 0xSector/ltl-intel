@@ -1,11 +1,11 @@
 {
   "note": "Scraped from public monthly releases. CASS Information Systems, Logistics Managers' Index, American Trucking Associations.",
-  "fetched_at": "2026-10-05T21:21:36.449346Z",
+  "fetched_at": "2026-10-12T21:54:12.922468Z",
   "cass": {
-    "shipments_index": 1.038,
-    "expenditures_index": 3.722,
-    "period_slug": "august-2026",
-    "source_url": "https://www.cassinfo.com/freight-audit-payment/cass-transportation-indexes/august-2026"
+    "shipments_index": 1.062,
+    "expenditures_index": 3.97,
+    "period_slug": "september-2026",
+    "source_url": "https://www.cassinfo.com/freight-audit-payment/cass-transportation-indexes/september-2026"
   },
   "lmi": {
     "headline": 70.2,
@@ -20,10 +20,10 @@
   },
   "indicators": {
     "CASS_Shipments": {
-      "latest": 1.038
+      "latest": 1.062
     },
     "CASS_Expenditures": {
-      "latest": 3.722
+      "latest": 3.97
     },
     "LMI_Headline": {
       "latest": 70.2
