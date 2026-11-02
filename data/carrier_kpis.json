@@ -1,6 +1,6 @@
 {
   "note": "Quarterly revenue + derived operating ratio from SEC XBRL companyfacts. Yield and tonnage are carrier-specific metrics not in GAAP XBRL \u2014 they require parsing earnings releases separately.",
-  "fetched_at": "2026-10-26T19:37:47.074312Z",
+  "fetched_at": "2026-11-02T22:30:09.383603Z",
   "carriers": [
     {
       "name": "ODFL",
@@ -72,13 +72,6 @@
       "revenue_tag_used": "Revenues",
       "history": [
         {
-          "period": "2024Q1",
-          "end": "2024-03-31",
-          "revenue_usd": 754775000.0,
-          "operating_income_usd": 117912000.0,
-          "operating_ratio_pct": 84.38
-        },
-        {
           "period": "2024Q2",
           "end": "2024-06-30",
           "revenue_usd": 823244000.0,
@@ -126,6 +119,13 @@
           "revenue_usd": 956494000.0,
           "operating_income_usd": 125212000.0,
           "operating_ratio_pct": 86.91
+        },
+        {
+          "period": "2026Q3",
+          "end": "2026-09-30",
+          "revenue_usd": 982454000.0,
+          "operating_income_usd": 122291000.0,
+          "operating_ratio_pct": 87.55
         }
       ],
       "source": "sec_companyfacts"
@@ -135,13 +135,6 @@
       "cik": "0001166003",
       "revenue_tag_used": "RevenueFromContractWithCustomerExcludingAssessedTax",
       "history": [
-        {
-          "period": "2024Q1",
-          "end": "2024-03-31",
-          "revenue_usd": 2018000000.0,
-          "operating_income_usd": 138000000.0,
-          "operating_ratio_pct": 93.16
-        },
         {
           "period": "2024Q2",
           "end": "2024-06-30",
@@ -190,6 +183,13 @@
           "revenue_usd": 2355000000.0,
           "operating_income_usd": 271000000.0,
           "operating_ratio_pct": 88.49
+        },
+        {
+          "period": "2026Q3",
+          "end": "2026-09-30",
+          "revenue_usd": 2373000000.0,
+          "operating_income_usd": 288000000.0,
+          "operating_ratio_pct": 87.86
         }
       ],
       "source": "sec_companyfacts"
