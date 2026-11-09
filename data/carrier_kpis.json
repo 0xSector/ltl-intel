@@ -1,19 +1,12 @@
 {
   "note": "Quarterly revenue + derived operating ratio from SEC XBRL companyfacts. Yield and tonnage are carrier-specific metrics not in GAAP XBRL \u2014 they require parsing earnings releases separately.",
-  "fetched_at": "2026-11-02T22:30:09.383603Z",
+  "fetched_at": "2026-11-09T23:12:16.167273Z",
   "carriers": [
     {
       "name": "ODFL",
       "cik": "0000878927",
       "revenue_tag_used": "RevenueFromContractWithCustomerIncludingAssessedTax",
       "history": [
-        {
-          "period": "2024Q1",
-          "end": "2024-03-31",
-          "revenue_usd": 1460073000.0,
-          "operating_income_usd": 386426000.0,
-          "operating_ratio_pct": 73.53
-        },
         {
           "period": "2024Q2",
           "end": "2024-06-30",
@@ -62,6 +55,13 @@
           "revenue_usd": 1554004000.0,
           "operating_income_usd": 465301000.0,
           "operating_ratio_pct": 70.06
+        },
+        {
+          "period": "2026Q3",
+          "end": "2026-09-30",
+          "revenue_usd": 1590726000.0,
+          "operating_income_usd": 452645000.0,
+          "operating_ratio_pct": 71.54
         }
       ],
       "source": "sec_companyfacts"
@@ -200,13 +200,6 @@
       "revenue_tag_used": "RevenueFromContractWithCustomerExcludingAssessedTax",
       "history": [
         {
-          "period": "2024Q1",
-          "end": "2024-03-31",
-          "revenue_usd": 1036419000.0,
-          "operating_income_usd": 22435000.0,
-          "operating_ratio_pct": 97.84
-        },
-        {
           "period": "2024Q2",
           "end": "2024-06-30",
           "revenue_usd": 1077831000.0,
@@ -254,6 +247,13 @@
           "revenue_usd": 1184533000.0,
           "operating_income_usd": -20623000.0,
           "operating_ratio_pct": 101.74
+        },
+        {
+          "period": "2026Q3",
+          "end": "2026-09-30",
+          "revenue_usd": 1210503000.0,
+          "operating_income_usd": 73334000.0,
+          "operating_ratio_pct": 93.94
         }
       ],
       "source": "sec_companyfacts"
