@@ -1,15 +1,15 @@
 {
-  "fetched_at": "2026-11-16T23:05:26.024043Z",
+  "fetched_at": "2026-11-24T01:18:58.717438Z",
   "carriers": [
     {
       "name": "ODFL",
       "cik": "0000878927",
-      "error": "HTTP Error 503: Service Unavailable"
+      "error": "HTTP Error 404: Not Found"
     },
     {
       "name": "Saia",
       "cik": "0001177702",
-      "error": "HTTP Error 503: Service Unavailable"
+      "error": "HTTP Error 404: Not Found"
     }
   ]
 }
